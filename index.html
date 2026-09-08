@@ -38,7 +38,6 @@
             line-height: 1.6;
         }
 
-
         /* =========================
            NAVBAR
         ========================= */
@@ -537,87 +536,9 @@
 
 
         /* =========================
-           BUY PHONE SECTION
-        ========================= */
-        .buy-section {
-            padding: 100px 8%;
-            background: linear-gradient(135deg, #fff7fa, #ffeaf2);
-        }
-        .buy-container {
-            max-width: 1200px;
-            margin: auto;
-        }
-        .buy-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin: 30px 0;
-        }
-        .buy-filters input,
-        .buy-filters select {
-            padding: 12px 15px;
-            border: 1px solid #e7cbd5;
-            border-radius: 8px;
-            font-size: 15px;
-            outline: none;
-            min-width: 180px;
-            background: white;
-        }
-        .buy-filters input:focus,
-        .buy-filters select:focus {
-            border-color: #d6336c;
-        }
-        .phone-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-        .phone-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.2s ease;
-        }
-        .phone-card:hover {
-            transform: translateY(-5px);
-        }
-        .phone-card h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-        .phone-card p {
-            margin: 7px 0;
-            color: #555;
-        }
-        .phone-price {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 12px 0;
-        }
-        .buy-now-btn {
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 15px;
-            margin-top: 10px;
-        }
-        .buy-now-btn:hover {
-            opacity: 0.85;
-        }
-        .no-phones {
-            text-align: center;
-            font-size: 18px;
-            margin: 30px 0;
-        }
-
-        /* =========================
            LOGIN MODAL
         ========================= */
+
         .login-modal {
             display: none;
 
@@ -820,6 +741,196 @@
 
 
         /* =========================
+           ENHANCED LOGIN DESIGN
+        ========================= */
+
+        .login-modal {
+            background: transparent;
+            backdrop-filter: none;
+            padding: 20px;
+        }
+
+        .login-box {
+            max-width: 440px;
+            padding: 42px 38px 36px;
+            border: 1px solid rgba(255,255,255,.75);
+            border-radius: 28px;
+            background: rgba(255,255,255,.94);
+            box-shadow: 0 30px 90px rgba(68, 9, 35, .32);
+            overflow: hidden;
+        }
+
+        .login-box::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #8f2852, #d6336c, #f28bb0);
+        }
+
+        .login-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -.7px;
+            color: #8f2852;
+            margin: 2px 0 28px;
+        }
+
+        .login-box h2 {
+            text-align: center;
+            color: #321722;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .login-box p {
+            text-align: center;
+            color: #80616e;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .mobile-input {
+            width: 100%;
+            padding: 16px 17px;
+            border: 1.5px solid #ead1dc;
+            border-radius: 13px;
+            outline: none;
+            font-size: 16px;
+            color: #321722;
+            background: #fffafd;
+            transition: .2s ease;
+            margin-bottom: 14px;
+        }
+
+        .mobile-input:focus {
+            border-color: #d6336c;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(214,51,108,.10);
+        }
+
+        .send-otp-btn,
+        .verify-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 13px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 800;
+            color: white;
+            background: linear-gradient(135deg, #d6336c, #a92355);
+            box-shadow: 0 9px 20px rgba(169,35,85,.22);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .send-otp-btn:hover,
+        .verify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 13px 25px rgba(169,35,85,.30);
+        }
+
+        .resend-btn {
+            width: 100%;
+            padding: 13px;
+            margin-top: 10px;
+            border: 1px solid #e7cbd5;
+            border-radius: 13px;
+            background: white;
+            color: #a92355;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .otp-container {
+            display: flex;
+            justify-content: center;
+            gap: 9px;
+            margin: 22px 0;
+        }
+
+        .otp-box {
+            width: 49px;
+            height: 56px;
+            text-align: center;
+            font-size: 21px;
+            font-weight: 800;
+            border-radius: 13px;
+            border: 1.5px solid #e1c5d0;
+            outline: none;
+            color: #8f2852;
+            background: #fffafd;
+            transition: .2s ease;
+        }
+
+        .otp-box:focus {
+            border-color: #d6336c;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(214,51,108,.10);
+            transform: translateY(-2px);
+        }
+
+        .close-btn {
+            width: 34px;
+            height: 34px;
+            right: 16px;
+            top: 16px;
+            border-radius: 50%;
+            background: #fff0f5;
+            color: #8f2852;
+            font-size: 23px;
+            line-height: 30px;
+            transition: .2s ease;
+        }
+
+        .close-btn:hover {
+            background: #f9d6e3;
+            transform: rotate(90deg);
+        }
+
+        #otpMessage {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #b52a59;
+            min-height: 20px;
+        }
+
+        @media (max-width: 520px) {
+            .login-box {
+                padding: 38px 22px 28px;
+                border-radius: 22px;
+            }
+
+            .login-brand {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+            .login-box h2 {
+                font-size: 21px;
+            }
+
+            .otp-container {
+                gap: 6px;
+            }
+
+            .otp-box {
+                width: 43px;
+                height: 51px;
+            }
+        }
+
+
+        /* =========================
            FOOTER
         ========================= */
 
@@ -903,7 +1014,758 @@
 
         }
 
-    </style>
+    
+
+        /* =========================
+           IMEI VERIFICATION
+        ========================= */
+
+        .imei-row {
+            display: flex;
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        .imei-row input {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .imei-btn {
+            border: none;
+            border-radius: 12px;
+            padding: 0 18px;
+            background: linear-gradient(135deg, #8f2852, #c94f7c);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .25s ease;
+            box-shadow: 0 8px 18px rgba(143,40,82,.18);
+        }
+
+        .imei-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(143,40,82,.25);
+        }
+
+        .imei-message {
+            display: block;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .imei-message.success {
+            color: #16834b;
+            font-weight: 700;
+        }
+
+        .imei-message.error {
+            color: #c62828;
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .imei-row {
+                flex-direction: column;
+            }
+
+            .imei-btn {
+                min-height: 48px;
+            }
+        }
+
+/* =========================
+   IMEI VERIFICATION
+========================= */
+.imei-section {
+    margin: 26px 0;
+    padding: 22px;
+    border: 1px solid rgba(143, 40, 82, 0.16);
+    border-radius: 18px;
+    background: linear-gradient(135deg, #fff7fb, #ffffff);
+    box-shadow: 0 10px 28px rgba(80, 20, 50, 0.08);
+}
+
+.imei-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.imei-header h3 {
+    margin: 0 0 6px;
+    color: #7d2348;
+    font-size: 20px;
+}
+
+.imei-header p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.imei-badge {
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: #fce5ef;
+    color: #8f2852;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.imei-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #444;
+}
+
+.imei-input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.imei-input-row input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1.5px solid #e2bfd0;
+    border-radius: 11px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s ease;
+    background: #fff;
+}
+
+.imei-input-row input:focus {
+    border-color: #a83261;
+    box-shadow: 0 0 0 4px rgba(168, 50, 97, 0.10);
+}
+
+.imei-verify-btn {
+    border: 0;
+    border-radius: 11px;
+    padding: 0 18px;
+    background: linear-gradient(135deg, #9d2e59, #c94b78);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.imei-verify-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(157, 46, 89, 0.25);
+}
+
+.imei-message {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.imei-message.success {
+    display: block;
+    color: #176b3a;
+    background: #e9f8ef;
+    border: 1px solid #b9e7ca;
+}
+
+.imei-message.error {
+    display: block;
+    color: #a1263e;
+    background: #fff0f3;
+    border: 1px solid #f2c1cb;
+}
+
+.imei-help {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 13px;
+    color: #777;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .imei-input-row {
+        flex-direction: column;
+    }
+
+    .imei-verify-btn {
+        padding: 13px;
+    }
+
+    .imei-header {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================
+   SINGLE FILE PAGE VIEWS
+========================= */
+body.sell-page-active .hero,
+body.sell-page-active .home-only,
+body.sell-page-active #home,
+body.sell-page-active .buy-phone-section {
+    display: none !important;
+}
+
+body.sell-page-active #sell-phone-section {
+    display: block !important;
+    min-height: calc(100vh - 80px);
+    padding-top: 110px;
+}
+
+body:not(.sell-page-active) #sell-phone-section {
+    display: none !important;
+}
+
+.sell-page-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    border: 1px solid #e7bfd0;
+    background: #fff;
+    color: #8f2852;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sell-page-back:hover {
+    background: #fff0f6;
+    transform: translateY(-1px);
+}
+
+.sell-page-title {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.sell-page-title h1 {
+    color: #8f2852;
+    font-size: clamp(30px, 5vw, 46px);
+    margin-bottom: 8px;
+}
+
+.sell-page-title p {
+    color: #777;
+    font-size: 16px;
+}
+
+@media (max-width: 700px) {
+    body.sell-page-active #sell-phone-section {
+        padding-top: 90px;
+    }
+}
+
+
+/* =========================
+   SELL PHONE FULL PAGE
+========================= */
+.sell-page {
+    min-height: calc(100vh - 80px);
+    padding: 52px 7% 80px;
+    background:
+        radial-gradient(circle at 5% 10%, rgba(214,51,108,.12), transparent 28%),
+        radial-gradient(circle at 95% 80%, rgba(201,79,124,.10), transparent 25%),
+        linear-gradient(135deg, #fff8fb 0%, #fff 48%, #fff3f7 100%);
+}
+
+.sell-page-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.sell-back-btn {
+    border: 1px solid #edcfdb;
+    background: #fff;
+    color: #8f2852;
+    padding: 11px 18px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.sell-back-btn:hover {
+    transform: translateX(-3px);
+    box-shadow: 0 8px 20px rgba(143,40,82,.10);
+}
+
+.sell-page-heading {
+    text-align: center;
+    margin: 28px auto 40px;
+    max-width: 760px;
+}
+
+.sell-page-heading > span {
+    color: #d6336c;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+}
+
+.sell-page-heading h1 {
+    margin: 8px 0 10px;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.08;
+    color: #2b1720;
+}
+
+.sell-page-heading p {
+    color: #765865;
+    font-size: 16px;
+}
+
+.sell-layout {
+    display: grid;
+    grid-template-columns: .78fr 1.22fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.sell-info-panel,
+.sell-form-card {
+    border: 1px solid #f0dbe3;
+    border-radius: 24px;
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 20px 55px rgba(111,30,60,.10);
+}
+
+.sell-info-panel {
+    padding: 34px;
+    background: linear-gradient(145deg, #8f2852, #c94f7c);
+    color: white;
+    position: sticky;
+    top: 105px;
+    overflow: hidden;
+}
+
+.sell-info-panel::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    right: -90px;
+    bottom: -90px;
+    background: rgba(255,255,255,.08);
+}
+
+.sell-info-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    background: rgba(255,255,255,.14);
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.sell-info-panel h2 {
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 28px;
+}
+
+.sell-step {
+    display: flex;
+    gap: 15px;
+    padding: 17px 0;
+    border-top: 1px solid rgba(255,255,255,.16);
+}
+
+.sell-step b {
+    min-width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,.16);
+    font-size: 12px;
+}
+
+.sell-step strong {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.sell-step p {
+    color: #f9e6ed;
+    font-size: 13px;
+}
+
+.sell-trust {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #fff1f5;
+}
+
+.sell-trust span {
+    margin-right: 7px;
+    font-weight: 900;
+}
+
+.sell-form-card {
+    padding: 34px;
+}
+
+.sell-progress {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.progress-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #f4e5eb;
+    color: #8f2852;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.progress-dot.active {
+    background: #d6336c;
+    color: white;
+}
+
+.progress-line {
+    height: 2px;
+    flex: 1;
+    background: #f0d5df;
+}
+
+.sell-form-card > h2 {
+    font-size: 27px;
+    color: #2b1720;
+}
+
+.form-subtitle {
+    color: #80616e;
+    font-size: 14px;
+    margin: 4px 0 24px;
+}
+
+.sell-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.sell-form-group label,
+.imei-card > label {
+    display: block;
+    color: #3d2931;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.sell-form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid #ead2dc;
+    border-radius: 12px;
+    background: #fffafd;
+    color: #3d2931;
+    outline: none;
+    font-size: 14px;
+    transition: .2s ease;
+}
+
+.sell-form-group select:focus {
+    border-color: #d6336c;
+    box-shadow: 0 0 0 4px rgba(214,51,108,.09);
+}
+
+.imei-card {
+    margin-top: 25px;
+    padding: 21px;
+    border: 1.5px solid #f0cfdb;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #fff7fa, #fff);
+}
+
+.imei-title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.imei-title-row h3 {
+    color: #8f2852;
+    font-size: 19px;
+    margin-bottom: 3px;
+}
+
+.imei-title-row p {
+    color: #80616e;
+    font-size: 13px;
+}
+
+.imei-title-row span {
+    height: fit-content;
+    padding: 6px 9px;
+    border-radius: 999px;
+    background: #fce4ed;
+    color: #8f2852;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.imei-input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.imei-input-row input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1.5px solid #e5c9d4;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+}
+
+.imei-input-row input:focus {
+    border-color: #d6336c;
+    box-shadow: 0 0 0 4px rgba(214,51,108,.09);
+}
+
+.imei-input-row button {
+    border: 0;
+    border-radius: 12px;
+    padding: 0 19px;
+    background: linear-gradient(135deg, #8f2852, #d6336c);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.imei-status {
+    display: none;
+    margin-top: 10px;
+    padding: 9px 11px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.imei-status.success {
+    display: block;
+    color: #177344;
+    background: #eaf8ef;
+    border: 1px solid #bfe7cc;
+}
+
+.imei-status.error {
+    display: block;
+    color: #a32943;
+    background: #fff0f3;
+    border: 1px solid #f2c2cc;
+}
+
+.imei-card small {
+    display: block;
+    color: #80616e;
+    margin-top: 11px;
+    font-size: 12px;
+}
+
+.accessory-title {
+    margin: 24px 0 10px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #3d2931;
+}
+
+.accessory-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.accessory-grid label {
+    padding: 10px 13px;
+    border: 1px solid #ecd6df;
+    border-radius: 10px;
+    background: #fff8fb;
+    font-size: 13px;
+    color: #5e4350;
+    cursor: pointer;
+}
+
+.accessory-grid input {
+    accent-color: #d6336c;
+}
+
+.sell-estimate-btn {
+    margin-top: 25px;
+}
+
+.sell-price-result {
+    display: none;
+    margin-top: 22px;
+    padding: 24px;
+    text-align: center;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #fff0f5, #fff8fb);
+    border: 1px solid #f1c7d5;
+}
+
+.sell-price-result > span {
+    display: block;
+    color: #8f2852;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.sell-price-result strong {
+    display: block;
+    margin: 4px 0;
+    color: #d6336c;
+    font-size: 42px;
+}
+
+.sell-price-result p {
+    color: #765865;
+    font-size: 13px;
+}
+
+body.sell-page-active .hero,
+body.sell-page-active footer {
+    display: none !important;
+}
+
+body:not(.sell-page-active) #sell-phone-section {
+    display: none !important;
+}
+
+body.sell-page-active #sell-phone-section {
+    display: block !important;
+}
+
+@media (max-width: 850px) {
+    .sell-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sell-info-panel {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .sell-page {
+        padding: 35px 5% 60px;
+    }
+
+    .sell-form-card,
+    .sell-info-panel {
+        padding: 23px;
+    }
+
+    .sell-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .imei-input-row {
+        flex-direction: column;
+    }
+
+    .imei-input-row button {
+        min-height: 48px;
+    }
+
+    .imei-title-row {
+        flex-direction: column;
+    }
+}
+
+
+/* FINAL PHONE DETAIL BUTTONS - only for Sell Phone */
+.phone-details-buttons{display:block!important}
+.sell-option-group-full{width:100%;margin-bottom:22px}
+.phone-option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:12px;margin-top:9px}
+.phone-option-btn{border:2px solid #ead7e1;background:#fff;border-radius:15px;min-height:108px;padding:10px 7px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-family:inherit;transition:.2s ease}
+.phone-option-btn:hover{border-color:#e75480;transform:translateY(-2px);box-shadow:0 6px 16px rgba(231,84,128,.12)}
+.phone-option-btn.selected{border-color:#e75480;background:#fff0f6;box-shadow:0 0 0 3px rgba(231,84,128,.12)}
+.phone-option-image{font-size:39px;line-height:1;margin-bottom:3px}
+.phone-option-btn strong{font-size:13px;text-align:center}
+.phone-option-btn small{font-size:11px;color:#777;text-align:center}
+.phone-option-empty{grid-column:1/-1;padding:18px;border:1px dashed #d8c4ce;border-radius:12px;text-align:center;color:#777;background:#fff}
+.qr-demo-option{margin:18px 0;padding:15px;border:1px solid #edd9e3;border-radius:14px;background:#fff8fb;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.qr-demo-copy{display:flex;flex-direction:column;gap:3px}.qr-demo-copy span{font-size:12px;color:#777}
+.qr-demo-actions{display:flex;align-items:center;gap:12px}.qr-demo-actions img{width:90px;height:90px;border-radius:8px;background:#fff;border:1px solid #ddd}.qr-demo-actions button{border:0;border-radius:9px;padding:10px 14px;background:#e75480;color:#fff;font-weight:700;cursor:pointer}
+@media(max-width:650px){.qr-demo-option{flex-direction:column;align-items:flex-start}.qr-demo-actions{width:100%;justify-content:space-between}}
+
+
+/* HOME NAVIGATION - MORE MENU */
+.nav-more {
+    position: relative;
+}
+.nav-more-btn {
+    border: none;
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 8px 4px;
+}
+.more-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    min-width: 175px;
+    background: #fff;
+    border: 1px solid #f0dce5;
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 12px 30px rgba(36, 21, 29, .12);
+    z-index: 1200;
+}
+.more-menu.show {
+    display: block;
+}
+.more-menu a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 9px;
+    color: #24151d;
+    text-decoration: none;
+}
+.more-menu a:hover {
+    background: #fff0f6;
+    color: #e75480;
+}
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 12px;
+    }
+}
+
+</style>
 
 </head>
 
@@ -916,37 +1778,14 @@
     ========================= -->
 
     <nav class="navbar">
-
-        <a href="#home" class="logo">
-            📱 CoherentMobiles
-        </a>
-
+        <a href="#home" class="logo">📱 CoherentMobiles</a>
         <div class="nav-links">
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#sellSection">
-                Sell Phone
-            </a>
-
-           <a href="#buySection">
-    Buy Phone
-</a>
-
-            <!-- Anam will add Appointment here -->
-
-            <button
-                class="login-btn"
-                id="loginButton"
-                onclick="openLogin()"
-            >
-                Login
-            </button>
-
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#appointment" onclick="showComingSoon('Appointment')">Appointment</a>
+            <a href="#contact">Contact Us</a>
+            <button class="login-btn" id="loginButton" type="button" onclick="openLogin()">Login</button>
         </div>
-
     </nav>
 
 
@@ -965,10 +1804,7 @@
                 BUY • SELL • UPGRADE
             </span>
 
-            <h1>
-                Your Phone.
-                <span>Your Choice.</span>
-            </h1>
+            <h1>Buy Smart. Sell Smart.</h1>
 
             <p>
                 CoherentMobiles makes buying and selling
@@ -980,7 +1816,7 @@
 
                 <button
                     class="primary-btn"
-                    onclick="goToSell()"
+                    onclick="showSellPage()"
                 >
                     Sell Your Phone
                 </button>
@@ -1008,336 +1844,194 @@
          SELL PHONE SECTION
     ========================= -->
 
-    <section
-        class="sell-section"
-        id="sellSection"
-    >
-
-        <div class="sell-container">
+    
 
 
-            <div class="section-heading">
+    
+<!-- =========================
+     SELL PHONE PAGE
+========================= -->
+<section id="sell-phone-section" class="sell-page">
+    <div class="sell-page-inner">
 
-                <span>
-                    SELL YOUR PHONE
-                </span>
+        <button type="button" class="sell-back-btn" onclick="showHomePage()">
+            ← Back to Home
+        </button>
 
-                <h2>
-                    Get the Best Price for Your Phone
-                </h2>
+        <div class="sell-page-heading">
+            <span>SELL YOUR PHONE</span>
+            <h1>Get the Best Value for Your Phone</h1>
+            <p>Tell us about your device, verify the IMEI, and get an instant estimated price.</p>
+        </div>
 
-                <p>
-                    Enter your phone details and get
-                    an instant estimated selling price.
-                </p>
+        <div class="sell-layout">
 
+            <div class="sell-info-panel">
+                <div class="sell-info-icon">📱</div>
+                <h2>Sell your phone in 3 simple steps</h2>
+
+                <div class="sell-step">
+                    <b>01</b>
+                    <div>
+                        <strong>Tell us about your phone</strong>
+                        <p>Select the brand, model, storage and condition.</p>
+                    </div>
+                </div>
+
+                <div class="sell-step">
+                    <b>02</b>
+                    <div>
+                        <strong>Verify your IMEI</strong>
+                        <p>Enter your 15-digit IMEI and verify your device.</p>
+                    </div>
+                </div>
+
+                <div class="sell-step">
+                    <b>03</b>
+                    <div>
+                        <strong>Get your estimated price</strong>
+                        <p>See the estimated resale value instantly.</p>
+                    </div>
+                </div>
+
+                <div class="sell-trust">
+                    <span>✓</span> Quick & transparent estimation
+                </div>
+                <div class="sell-trust">
+                    <span>✓</span> Secure IMEI verification
+                </div>
+                <div class="sell-trust">
+                    <span>✓</span> Easy selling process
+                </div>
             </div>
 
+            <div class="sell-form-card">
 
-            <div class="sell-card">
-
-
-                <!-- BRAND -->
-
-                <div class="form-group">
-
-                    <label>
-                        Phone Brand
-                    </label>
-
-                    <select
-                        id="sellBrand"
-                        onchange="updateSellModels()"
-                    >
-
-                        <option value="">
-                            Select Brand
-                        </option>
-
-                        <option value="apple">
-                            Apple
-                        </option>
-
-                        <option value="samsung">
-                            Samsung
-                        </option>
-
-                        <option value="oneplus">
-                            OnePlus
-                        </option>
-
-                        <option value="xiaomi">
-                            Xiaomi
-                        </option>
-
-                        <option value="realme">
-                            Realme
-                        </option>
-
-                        <option value="vivo">
-                            Vivo
-                        </option>
-
-                        <option value="oppo">
-                            OPPO
-                        </option>
-
-                    </select>
-
+                <div class="sell-progress">
+                    <div class="progress-dot active">1</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-dot">2</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-dot">3</div>
                 </div>
 
+                <h2>Phone Details</h2>
+                <p class="form-subtitle">Enter your phone details below.</p>
 
-                <!-- MODEL -->
+                <div class="sell-form-grid phone-details-buttons">
 
-                <div class="form-group">
+                    <div class="sell-form-group sell-option-group-full">
+                        <label>Brand</label>
+                        <div class="phone-option-grid" id="sellBrandOptions">
+                            <button type="button" class="phone-option-btn" onclick="selectSellBrand('apple', this)"><span class="phone-option-image">🍎</span><strong>Apple</strong></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellBrand('samsung', this)"><span class="phone-option-image">📱</span><strong>Samsung</strong></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellBrand('oneplus', this)"><span class="phone-option-image">1️⃣</span><strong>OnePlus</strong></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellBrand('xiaomi', this)"><span class="phone-option-image">📱</span><strong>Xiaomi</strong></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellBrand('realme', this)"><span class="phone-option-image">⚡</span><strong>Realme</strong></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellBrand('vivo', this)"><span class="phone-option-image">📱</span><strong>Vivo</strong></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellBrand('oppo', this)"><span class="phone-option-image">📱</span><strong>OPPO</strong></button>
+                        </div>
+                        <input type="hidden" id="sellBrand" value="">
+                    </div>
 
-                    <label>
-                        Phone Model
-                    </label>
+                    <div class="sell-form-group sell-option-group-full">
+                        <label>Model</label>
+                        <div class="phone-option-grid" id="sellModelOptions">
+                            <div class="phone-option-empty">Select a brand to see models</div>
+                        </div>
+                        <input type="hidden" id="sellModel" value="">
+                    </div>
 
-                    <select
-                        id="sellModel"
-                        onchange="updateSellSeries()"
-                    >
+                    <div class="sell-form-group sell-option-group-full">
+                        <label>Storage / Variant</label>
+                        <div class="phone-option-grid" id="sellStorageOptions">
+                            <div class="phone-option-empty">Select a model to see storage options</div>
+                        </div>
+                        <input type="hidden" id="sellStorage" value="">
+                    </div>
 
-                        <option value="">
-                            Select Model
-                        </option>
+                    <div class="sell-form-group">
+                        <label>Phone Condition</label>
+                        <div class="phone-option-grid condition-grid" id="sellConditionOptions">
+                            <button type="button" class="phone-option-btn" onclick="selectSellOption('sellCondition','excellent',this)"><span class="phone-option-image">✨</span><strong>Excellent</strong><small>Like new</small></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellOption('sellCondition','good',this)"><span class="phone-option-image">👍</span><strong>Good</strong><small>Minor marks</small></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellOption('sellCondition','fair',this)"><span class="phone-option-image">🙂</span><strong>Fair</strong><small>Visible wear</small></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellOption('sellCondition','poor',this)"><span class="phone-option-image">🔧</span><strong>Poor</strong><small>Heavy wear</small></button>
+                        </div>
+                        <input type="hidden" id="sellCondition" value="">
+                    </div>
 
-                    </select>
-
-                </div>
-
-
-                <!-- STORAGE -->
-
-                <div class="form-group">
-
-                    <label>
-                        Storage / Variant
-                    </label>
-
-                    <select id="sellSeries">
-
-                        <option value="">
-                            Select Storage / Variant
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- CONDITION -->
-
-                <div class="form-group">
-
-                    <label>
-                        Phone Condition
-                    </label>
-
-                    <select id="sellCondition">
-
-                        <option value="">
-                            Select Condition
-                        </option>
-
-                        <option value="excellent">
-                            Excellent - Like New
-                        </option>
-
-                        <option value="good">
-                            Good - Minor Scratches
-                        </option>
-
-                        <option value="fair">
-                            Fair - Visible Scratches
-                        </option>
-
-                        <option value="poor">
-                            Poor - Heavy Damage
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- BATTERY -->
-
-                <div class="form-group">
-
-                    <label>
-                        Battery Health
-                    </label>
-
-                    <select id="batteryHealth">
-
-                        <option value="">
-                            Select Battery Health
-                        </option>
-
-                        <option value="90">
-                            90% - 100%
-                        </option>
-
-                        <option value="80">
-                            80% - 89%
-                        </option>
-
-                        <option value="70">
-                            70% - 79%
-                        </option>
-
-                        <option value="60">
-                            Below 70%
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- ACCESSORIES -->
-
-                <div class="form-group">
-
-                    <label>
-                        Accessories Available
-                    </label>
-
-                    <div class="checkbox-group">
-
-                        <label>
-
-                            <input
-                                type="checkbox"
-                                id="box"
-                            >
-
-                            Original Box
-
-                        </label>
-
-
-                        <label>
-
-                            <input
-                                type="checkbox"
-                                id="charger"
-                            >
-
-                            Original Charger
-
-                        </label>
-
-
-                        <label>
-
-                            <input
-                                type="checkbox"
-                                id="bill"
-                            >
-
-                            Purchase Bill
-
-                        </label>
-
+                    <div class="sell-form-group">
+                        <label>Battery Health</label>
+                        <div class="phone-option-grid condition-grid" id="sellBatteryOptions">
+                            <button type="button" class="phone-option-btn" onclick="selectSellOption('sellBattery','90',this)"><span class="phone-option-image">🔋</span><strong>90%+</strong><small>Excellent</small></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellOption('sellBattery','80',this)"><span class="phone-option-image">🔋</span><strong>80–89%</strong><small>Good</small></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellOption('sellBattery','70',this)"><span class="phone-option-image">🔋</span><strong>70–79%</strong><small>Fair</small></button>
+                            <button type="button" class="phone-option-btn" onclick="selectSellOption('sellBattery','60',this)"><span class="phone-option-image">🪫</span><strong>Below 70%</strong><small>Needs attention</small></button>
+                        </div>
+                        <input type="hidden" id="sellBattery" value="">
                     </div>
 
                 </div>
 
+                <div class="imei-card">
+                    <div class="imei-title-row">
+                        <div>
+                            <h3>🔐 IMEI Verification</h3>
+                            <p>Verify your device before getting the estimated price.</p>
+                        </div>
+                        <span>REQUIRED</span>
+                    </div>
 
-                <!-- PRICE BUTTON -->
+                    <label for="sellIMEI">15-digit IMEI Number</label>
+                    <div class="imei-input-row">
+                        <input id="sellIMEI"
+                               type="text"
+                               maxlength="15"
+                               inputmode="numeric"
+                               placeholder="Enter 15-digit IMEI">
+                        <button type="button" onclick="verifySellIMEI()">Verify IMEI</button>
+                    </div>
 
-                <button
-                    class="estimate-btn"
-                    onclick="calculateSellPrice()"
-                >
+                    <div class="qr-demo-option">
+                        <div class="qr-demo-copy">
+                            <strong>Or use QR Code</strong>
+                            <span>Scan this demo QR to fill a 15-digit IMEI.</span>
+                        </div>
+                        <div class="qr-demo-actions">
+                            <img id="sellIMEIQR" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=123456789012345" alt="Demo IMEI QR Code">
+                            <button type="button" onclick="useDemoQRIMEI()">Use QR Demo</button>
+                        </div>
+                    </div>
 
-                    💰 Get Estimated Price
+                    <div id="sellIMEIMessage" class="imei-status"></div>
 
+                    <small>💡 Find your IMEI by dialing <strong>*#06#</strong> on your phone.</small>
+                </div>
+
+                <div class="accessory-title">Accessories Available</div>
+                <div class="accessory-grid">
+                    <label><input type="checkbox" id="sellBox"> Original Box</label>
+                    <label><input type="checkbox" id="sellCharger"> Charger</label>
+                    <label><input type="checkbox" id="sellBill"> Purchase Bill</label>
+                </div>
+
+                <button type="button" class="estimate-btn sell-estimate-btn" onclick="calculateSellPrice()">
+                    Get Estimated Price →
                 </button>
 
-
-                <!-- RESULT -->
-
-                <div
-                    id="sellResult"
-                    class="sell-result"
-                >
-
-                    <h3>
-                        Estimated Selling Price
-                    </h3>
-
-                    <div id="sellPrice">
-                        ₹0
-                    </div>
-
-                    <p id="sellMessage"></p>
-
+                <div id="sellPriceResult" class="sell-price-result">
+                    <span>ESTIMATED RESALE VALUE</span>
+                    <strong id="sellPrice">₹0</strong>
+                    <p id="sellPriceMessage"></p>
                 </div>
-
             </div>
-
         </div>
+    </div>
+</section>
 
-    </section>
 
-
-    <!-- =========================
-         BUY PHONE SECTION
-    ========================= -->
-    <section id="buySection" class="buy-section">
-        <div class="buy-container">
-            <div class="section-heading">
-                <span>BUY A PHONE</span>
-                <h2>Find Your Perfect Phone</h2>
-                <p>Search and filter phones by name, brand, price and storage.</p>
-            </div>
-
-            <div class="buy-filters">
-                <input type="text" id="phoneSearch" placeholder="Search phone..." oninput="filterPhones()">
-
-                <select id="brandFilter" onchange="filterPhones()">
-                    <option value="">All Brands</option>
-                    <option value="Apple">Apple</option>
-                    <option value="Samsung">Samsung</option>
-                    <option value="OnePlus">OnePlus</option>
-                    <option value="Xiaomi">Xiaomi</option>
-                    <option value="Realme">Realme</option>
-                    <option value="Vivo">Vivo</option>
-                    <option value="OPPO">OPPO</option>
-                </select>
-
-                <select id="priceFilter" onchange="filterPhones()">
-                    <option value="">All Prices</option>
-                    <option value="under20000">Under ₹20,000</option>
-                    <option value="20000-40000">₹20,000 - ₹40,000</option>
-                    <option value="above40000">Above ₹40,000</option>
-                </select>
-
-                <select id="storageFilter" onchange="filterPhones()">
-                    <option value="">All Storage</option>
-                    <option value="128">128 GB</option>
-                    <option value="256">256 GB</option>
-                    <option value="512">512 GB</option>
-                </select>
-
-                <select id="sortFilter" onchange="filterPhones()">
-                    <option value="">Sort By</option>
-                    <option value="low">Price: Low to High</option>
-                    <option value="high">Price: High to Low</option>
-                    <option value="name">Name: A to Z</option>
-                </select>
-            </div>
-
-            <div id="phoneCards" class="phone-cards"></div>
-        </div>
-    </section>
-
-    <!-- =========================
+<!-- =========================
          LOGIN MODAL
     ========================= -->
 
@@ -1356,6 +2050,10 @@
                 ×
             </button>
 
+
+            <div class="login-brand">
+                📱 CoherentMobiles
+            </div>
 
             <!-- MOBILE NUMBER -->
 
@@ -1508,7 +2206,7 @@
            BHakthi - LOGIN / OTP
         ===================================================== */
 
-        let generatedOTP = null;
+        let generatedOTP = "123456";
 
 
         function openLogin() {
@@ -1531,97 +2229,31 @@
 
         function sendOTP() {
 
-            const mobile =
-                document.getElementById(
-                    "mobileNumber"
-                ).value.trim();
-
+            const mobile = document.getElementById("mobileNumber").value.trim();
 
             if (!/^\d{10}$/.test(mobile)) {
-
-                alert(
-                    "Please enter a valid 10-digit mobile number."
-                );
-
+                alert("Please enter a valid 10-digit mobile number.");
                 return;
-
             }
 
+            // Demo OTP: always use 123456 so verification works reliably.
+            generatedOTP = "123456";
 
-            /*
-                Generate a random 6-digit OTP.
-            */
+            document.getElementById("mobileStep").style.display = "none";
+            document.getElementById("otpStep").style.display = "block";
+            document.getElementById("otpSubtitle").textContent =
+                "Demo OTP for +91 " + mobile + " is 123456";
 
-            generatedOTP =
-                Math.floor(
-                    100000 +
-                    Math.random() * 900000
-                ).toString();
+            for (let i = 1; i <= 6; i++) {
+                const box = document.getElementById("otp" + i);
+                if (box) box.value = generatedOTP[i - 1];
+            }
 
+            document.getElementById("otpMessage").textContent =
+                "✓ Demo OTP generated: 123456";
 
-            /*
-                Show OTP section.
-            */
-
-            document.getElementById(
-                "mobileStep"
-            ).style.display = "none";
-
-
-            document.getElementById(
-                "otpStep"
-            ).style.display = "block";
-
-
-            document.getElementById(
-                "otpSubtitle"
-            ).textContent =
-                "OTP sent to +91 " + mobile;
-
-
-            /*
-                Automatically fill
-                the six OTP boxes.
-            */
-
-            const otpBoxes =
-                document.querySelectorAll(
-                    ".otp-box"
-                );
-
-
-            otpBoxes.forEach(
-                function (box, index) {
-
-                    box.value =
-                        generatedOTP[index];
-
-                }
-            );
-
-
-            document.getElementById(
-                "otpMessage"
-            ).textContent =
-                "✓ OTP generated automatically";
-
-
-            document.getElementById(
-                "otp1"
-            ).focus();
-
-
-            /*
-                Demo purpose:
-                OTP is also printed
-                in browser console.
-            */
-
-            console.log(
-                "Generated OTP:",
-                generatedOTP
-            );
-
+            const firstBox = document.getElementById("otp1");
+            if (firstBox) firstBox.focus();
         }
 
 
@@ -1629,66 +2261,44 @@
 
             let enteredOTP = "";
 
-
-            for (
-                let i = 1;
-                i <= 6;
-                i++
-            ) {
-
-                enteredOTP +=
-                    document.getElementById(
-                        "otp" + i
-                    ).value;
-
+            for (let i = 1; i <= 6; i++) {
+                const box = document.getElementById("otp" + i);
+                enteredOTP += box ? box.value.trim() : "";
             }
 
+            const message = document.getElementById("otpMessage");
 
             if (!/^\d{6}$/.test(enteredOTP)) {
-
-                document.getElementById(
-                    "otpMessage"
-                ).textContent =
-                    "Please enter all 6 OTP digits.";
-
+                message.textContent = "Please enter all 6 OTP digits.";
                 return;
-
             }
 
+            if (enteredOTP === "123456") {
+                message.textContent = "✓ OTP verified successfully!";
 
-            if (
-                enteredOTP === generatedOTP
-            ) {
+                const loginButton = document.getElementById("loginButton");
+                if (loginButton) loginButton.textContent = "✓ Logged In";
 
-                document.getElementById(
-                    "otpMessage"
-                ).textContent =
-                    "✓ OTP verified successfully!";
+                document.body.classList.add("logged-in");
+                localStorage.setItem("coherentMobilesLoggedIn", "true");
 
-
-                document.getElementById(
-                    "loginButton"
-                ).textContent =
-                    "✓ Logged In";
-
-
-                setTimeout(
-                    closeLogin,
-                    1500
-                );
-
+                setTimeout(function () {
+                    closeLogin();
+                }, 800);
+            } else {
+                message.textContent = "✕ Incorrect OTP. Use 123456 for this demo.";
             }
-
-            else {
-
-                document.getElementById(
-                    "otpMessage"
-                ).textContent =
-                    "✕ Incorrect OTP. Please try again.";
-
-            }
-
         }
+
+
+        // Restore demo login state after page refresh.
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("coherentMobilesLoggedIn") === "true") {
+                const loginButton = document.getElementById("loginButton");
+                if (loginButton) loginButton.textContent = "✓ Logged In";
+                document.body.classList.add("logged-in");
+            }
+        });
 
 
         /* =========================
@@ -2210,6 +2820,50 @@
 
 
         /* =========================
+           IMEI VERIFICATION
+        ========================= */
+
+        function verifyIMEI() {
+
+            const input = document.getElementById("imeiNumber");
+            const message = document.getElementById("imeiMessage");
+            const imei = input.value.trim();
+
+            message.className = "imei-message";
+
+            if (!/^\d{15}$/.test(imei)) {
+                message.textContent = "Please enter a valid 15-digit IMEI number.";
+                message.classList.add("error");
+                return false;
+            }
+
+            // Luhn checksum validation used for IMEI format checking.
+            let sum = 0;
+
+            for (let i = 0; i < 15; i++) {
+                let digit = Number(imei[i]);
+
+                if (i % 2 === 1) {
+                    digit *= 2;
+                    if (digit > 9) digit -= 9;
+                }
+
+                sum += digit;
+            }
+
+            if (sum % 10 !== 0) {
+                message.textContent = "IMEI format check failed. Please check the number.";
+                message.classList.add("error");
+                return false;
+            }
+
+            message.textContent = "✓ IMEI verified successfully. You can continue with the selling process.";
+            message.classList.add("success");
+            return true;
+        }
+
+
+        /* =========================
            PRICE CALCULATION
         ========================= */
 
@@ -2263,6 +2917,11 @@
 
                 return;
 
+            }
+
+
+            if (!verifyIMEI()) {
+                return;
             }
 
 
@@ -2504,175 +3163,439 @@
             );
 
         }
-// BUY PHONE DATA
 
-const buyPhones = [
-    {
-        name: "iPhone 15",
-        brand: "Apple",
-        storage: 128,
-        price: 69999
-    },
-    {
-        name: "iPhone 15 Pro",
-        brand: "Apple",
-        storage: 256,
-        price: 109999
-    },
-    {
-        name: "Galaxy S24",
-        brand: "Samsung",
-        storage: 256,
-        price: 74999
-    },
-    {
-        name: "Galaxy A55",
-        brand: "Samsung",
-        storage: 128,
-        price: 39999
-    },
-    {
-        name: "OnePlus 12",
-        brand: "OnePlus",
-        storage: 256,
-        price: 64999
-    },
-    {
-        name: "OnePlus Nord 4",
-        brand: "OnePlus",
-        storage: 128,
-        price: 29999
-    },
-    {
-        name: "Xiaomi 14",
-        brand: "Xiaomi",
-        storage: 512,
-        price: 69999
-    },
-    {
-        name: "Redmi Note 13 Pro",
-        brand: "Xiaomi",
-        storage: 256,
-        price: 29999
-    },
-    {
-        name: "Realme GT 6",
-        brand: "Realme",
-        storage: 256,
-        price: 44999
-    },
-    {
-        name: "Vivo V30",
-        brand: "Vivo",
-        storage: 256,
-        price: 33999
-    },
-    {
-        name: "OPPO Reno 12",
-        brand: "OPPO",
-        storage: 256,
-        price: 32999
+    
+// =========================
+// SINGLE HTML FILE NAVIGATION
+// =========================
+function showSellPage() {
+    document.body.classList.add("sell-page-active");
+    window.location.hash = "sell-page";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function showHomePage() {
+    document.body.classList.remove("sell-page-active");
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.hash === "#sell-page") {
+        showSellPage();
     }
-];
+});
 
-function displayPhones(phones) {
-    const phoneCards = document.getElementById("phoneCards");
 
-    if (phones.length === 0) {
-        phoneCards.innerHTML =
-            '<p class="no-phones">No phones found.</p>';
+/* =========================
+   SELL PHONE PAGE
+========================= */
+const sellPhoneDataFinal = {
+    apple: {
+        "iPhone 15": ["128GB","256GB","512GB"],
+        "iPhone 14": ["128GB","256GB","512GB"],
+        "iPhone 13": ["128GB","256GB","512GB"],
+        "iPhone 12": ["64GB","128GB","256GB"]
+    },
+    samsung: {
+        "Galaxy S24": ["128GB","256GB","512GB"],
+        "Galaxy S23": ["128GB","256GB","512GB"],
+        "Galaxy S22": ["128GB","256GB","512GB"],
+        "Galaxy A55": ["128GB","256GB"]
+    },
+    oneplus: {
+        "OnePlus 12": ["256GB","512GB"],
+        "OnePlus 11": ["128GB","256GB"],
+        "OnePlus 10 Pro": ["128GB","256GB"]
+    },
+    xiaomi: {
+        "Xiaomi 14": ["256GB","512GB"],
+        "Redmi Note 13 Pro": ["128GB","256GB"]
+    },
+    realme: {
+        "Realme 12 Pro+": ["128GB","256GB"],
+        "Realme GT 6": ["256GB","512GB"]
+    },
+    vivo: {
+        "Vivo V30": ["128GB","256GB"],
+        "Vivo X100": ["256GB","512GB"]
+    },
+    oppo: {
+        "OPPO Reno 11": ["128GB","256GB"],
+        "OPPO Find X7": ["256GB","512GB"]
+    }
+};
+
+const sellBasePricesFinal = {
+    "iPhone 15": 52000,
+    "iPhone 14": 42000,
+    "iPhone 13": 34000,
+    "iPhone 12": 26000,
+    "Galaxy S24": 42000,
+    "Galaxy S23": 34000,
+    "Galaxy S22": 26000,
+    "Galaxy A55": 18000,
+    "OnePlus 12": 36000,
+    "OnePlus 11": 28000,
+    "OnePlus 10 Pro": 22000,
+    "Xiaomi 14": 30000,
+    "Redmi Note 13 Pro": 17000,
+    "Realme 12 Pro+": 19000,
+    "Realme GT 6": 25000,
+    "Vivo V30": 22000,
+    "Vivo X100": 42000,
+    "OPPO Reno 11": 20000,
+    "OPPO Find X7": 38000
+};
+
+function updateSellModels() {
+    const brand = document.getElementById("sellBrand");
+    const model = document.getElementById("sellModel");
+    const storage = document.getElementById("sellStorage");
+    if (!brand || !model || !storage) return;
+
+    model.innerHTML = '<option value="">Select Model</option>';
+    storage.innerHTML = '<option value="">Select Storage</option>';
+    storage.disabled = true;
+    model.disabled = !brand.value;
+
+    if (!brand.value) return;
+
+    Object.keys(sellPhoneDataFinal[brand.value]).forEach(name => {
+        const option = document.createElement("option");
+        option.value = name;
+        option.textContent = name;
+        model.appendChild(option);
+    });
+}
+
+function updateSellStorage() {
+    const brand = document.getElementById("sellBrand").value;
+    const modelName = document.getElementById("sellModel").value;
+    const storage = document.getElementById("sellStorage");
+    if (!storage) return;
+
+    storage.innerHTML = '<option value="">Select Storage</option>';
+    storage.disabled = !modelName;
+
+    if (!brand || !modelName) return;
+
+    sellPhoneDataFinal[brand][modelName].forEach(value => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = value;
+        storage.appendChild(option);
+    });
+}
+
+function verifySellIMEI() {
+    const input = document.getElementById("sellIMEI");
+    const message = document.getElementById("sellIMEIMessage");
+    if (!input || !message) return;
+
+    const imei = input.value.replace(/\D/g, "");
+    input.value = imei;
+    window.sellIMEIVerified = false;
+
+    if (imei.length !== 15) {
+        message.className = "imei-status error";
+        message.textContent = "✕ Enter a valid 15-digit IMEI number.";
         return;
     }
 
-    phoneCards.innerHTML = phones.map(phone => `
-        <div class="phone-card">
-            <h3>${phone.name}</h3>
-            <p><strong>Brand:</strong> ${phone.brand}</p>
-            <p><strong>Storage:</strong> ${phone.storage} GB</p>
-            <p class="phone-price">
-                ₹${phone.price.toLocaleString("en-IN")}
-            </p>
-
-            <button
-                class="buy-now-btn"
-                onclick="buyPhone('${phone.name}')"
-            >
-                Buy Now
-            </button>
-        </div>
-    `).join("");
-}
-
-function filterPhones() {
-
-    const search =
-        document.getElementById("phoneSearch").value.toLowerCase();
-
-    const brand =
-        document.getElementById("brandFilter").value;
-
-    const price =
-        document.getElementById("priceFilter").value;
-
-    const storage =
-        document.getElementById("storageFilter").value;
-
-    const sort =
-        document.getElementById("sortFilter").value;
-
-    let filteredPhones = buyPhones.filter(phone => {
-
-        const matchesSearch =
-            phone.name.toLowerCase().includes(search);
-
-        const matchesBrand =
-            brand === "" || phone.brand === brand;
-
-        const matchesStorage =
-            storage === "" ||
-            phone.storage === Number(storage);
-
-        let matchesPrice = true;
-
-        if (price === "under20000") {
-            matchesPrice = phone.price < 20000;
-        } else if (price === "20000-40000") {
-            matchesPrice =
-                phone.price >= 20000 &&
-                phone.price <= 40000;
-        } else if (price === "above40000") {
-            matchesPrice = phone.price > 40000;
+    let sum = 0;
+    for (let i = 0; i < 15; i++) {
+        let digit = Number(imei[i]);
+        if (i % 2 === 1) {
+            digit *= 2;
+            if (digit > 9) digit -= 9;
         }
-
-        return (
-            matchesSearch &&
-            matchesBrand &&
-            matchesStorage &&
-            matchesPrice
-        );
-    });
-
-    if (sort === "low") {
-        filteredPhones.sort((a, b) => a.price - b.price);
-    } else if (sort === "high") {
-        filteredPhones.sort((a, b) => b.price - a.price);
-    } else if (sort === "name") {
-        filteredPhones.sort((a, b) =>
-            a.name.localeCompare(b.name)
-        );
+        sum += digit;
     }
 
-    displayPhones(filteredPhones);
+    if (sum % 10 !== 0) {
+        message.className = "imei-status error";
+        message.textContent = "✕ IMEI verification failed. Please check the number.";
+        return;
+    }
+
+    window.sellIMEIVerified = true;
+    message.className = "imei-status success";
+    message.textContent = "✓ IMEI verified successfully.";
 }
 
-function buyPhone(phoneName) {
-    alert("You selected " + phoneName + " to buy.");
+function calculateSellPrice() {
+    const brand = document.getElementById("sellBrand").value;
+    const model = document.getElementById("sellModel").value;
+    const storage = document.getElementById("sellStorage").value;
+    const condition = document.getElementById("sellCondition").value;
+    const battery = document.getElementById("sellBattery").value;
+    const result = document.getElementById("sellPriceResult");
+    const priceEl = document.getElementById("sellPrice");
+    const message = document.getElementById("sellPriceMessage");
+
+    if (!brand || !model || !storage || !condition || !battery) {
+        alert("Please complete all phone details before estimating the price.");
+        return;
+    }
+
+    if (!window.sellIMEIVerified) {
+        const imeiMessage = document.getElementById("sellIMEIMessage");
+        imeiMessage.className = "imei-status error";
+        imeiMessage.textContent = "✕ Please verify your IMEI before getting the estimated price.";
+        document.getElementById("sellIMEI").focus();
+        return;
+    }
+
+    let price = sellBasePricesFinal[model] || 15000;
+
+    if (storage === "256GB") price += 3000;
+    if (storage === "512GB") price += 6000;
+
+    const conditionFactor = {
+        excellent: 1,
+        good: .85,
+        fair: .70,
+        poor: .50
+    };
+
+    const batteryFactor = {
+        "90": 1,
+        "80": .95,
+        "70": .88,
+        "60": .75
+    };
+
+    price *= conditionFactor[condition];
+    price *= batteryFactor[battery];
+
+    if (document.getElementById("sellBox").checked) price += 500;
+    if (document.getElementById("sellCharger").checked) price += 500;
+    if (document.getElementById("sellBill").checked) price += 300;
+
+    price = Math.round(price / 100) * 100;
+
+    priceEl.textContent = "₹" + price.toLocaleString("en-IN");
+    message.textContent = "Estimated value based on the details and verified IMEI you provided.";
+    result.style.display = "block";
+    result.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
-// Display phones when page loads
-displayPhones(buyPhones);
-    </script>
+function goToSell() {
+    showSellPage();
+}
 
+function showSellPage() {
+    document.body.classList.add("sell-page-active");
+    window.location.hash = "sell-page";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function showHomePage() {
+    document.body.classList.remove("sell-page-active");
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const imeiInput = document.getElementById("sellIMEI");
+    if (imeiInput) {
+        imeiInput.addEventListener("input", function () {
+            this.value = this.value.replace(/\D/g, "").slice(0, 15);
+            window.sellIMEIVerified = false;
+            const message = document.getElementById("sellIMEIMessage");
+            if (message) message.className = "imei-status";
+        });
+    }
+
+    if (window.location.hash === "#sell-page") showSellPage();
+});
+
+</script>
+
+
+<script>
+/* Sell Phone visual button logic - keeps the rest of the original site unchanged */
+function selectSellOption(id,value,button){
+    const input=document.getElementById(id);
+    if(!input)return;
+    input.value=value;
+    const group=button.parentElement;
+    group.querySelectorAll('.phone-option-btn').forEach(b=>b.classList.remove('selected'));
+    button.classList.add('selected');
+}
+
+function selectSellBrand(brand,button){
+    document.getElementById('sellBrand').value=brand;
+    document.getElementById('sellModel').value='';
+    document.getElementById('sellStorage').value='';
+    document.querySelectorAll('#sellBrandOptions .phone-option-btn').forEach(b=>b.classList.remove('selected'));
+    button.classList.add('selected');
+    const modelBox=document.getElementById('sellModelOptions');
+    const storageBox=document.getElementById('sellStorageOptions');
+    modelBox.innerHTML='';
+    storageBox.innerHTML='<div class="phone-option-empty">Select a model to see storage options</div>';
+    const models=sellPhoneDataFinal[brand]||{};
+    Object.keys(models).forEach(model=>{
+        const b=document.createElement('button');
+        b.type='button'; b.className='phone-option-btn';
+        b.innerHTML='<span class="phone-option-image">📱</span><strong>'+model+'</strong>';
+        b.onclick=function(){selectSellModel(model,this)};
+        modelBox.appendChild(b);
+    });
+}
+
+function selectSellModel(model,button){
+    document.getElementById('sellModel').value=model;
+    document.getElementById('sellStorage').value='';
+    document.querySelectorAll('#sellModelOptions .phone-option-btn').forEach(b=>b.classList.remove('selected'));
+    button.classList.add('selected');
+    const brand=document.getElementById('sellBrand').value;
+    const storageBox=document.getElementById('sellStorageOptions');
+    storageBox.innerHTML='';
+    (sellPhoneDataFinal[brand]?.[model]||[]).forEach(storage=>{
+        const b=document.createElement('button');
+        b.type='button'; b.className='phone-option-btn';
+        b.innerHTML='<span class="phone-option-image">💾</span><strong>'+storage+'</strong>';
+        b.onclick=function(){selectSellOption('sellStorage',storage,this)};
+        storageBox.appendChild(b);
+    });
+}
+
+function verifySellIMEI(){
+    const input=document.getElementById('sellIMEI');
+    const message=document.getElementById('sellIMEIMessage');
+    if(!input||!message)return;
+    const imei=input.value.replace(/\D/g,'');
+    input.value=imei;
+    window.sellIMEIVerified=false;
+    if(!/^\d{15}$/.test(imei)){
+        message.className='imei-status error';
+        message.textContent='✕ Enter any 15-digit number for this demo.';
+        return;
+    }
+    window.sellIMEIVerified=true;
+    message.className='imei-status success';
+    message.textContent='✓ IMEI verified successfully (demo mode).';
+}
+
+function useDemoQRIMEI(){
+    const input=document.getElementById('sellIMEI');
+    if(!input)return;
+    input.value='123456789012345';
+    verifySellIMEI();
+}
+
+function toggleMoreMenu() {
+    const menu = document.getElementById("moreMenu");
+    if (menu) menu.classList.toggle("show");
+}
+
+function closeMoreMenu() {
+    const menu = document.getElementById("moreMenu");
+    if (menu) menu.classList.remove("show");
+}
+
+document.addEventListener("click", function(event) {
+    const wrapper = document.querySelector(".nav-more");
+    const menu = document.getElementById("moreMenu");
+    if (wrapper && menu && !wrapper.contains(event.target)) {
+        menu.classList.remove("show");
+    }
+});
+
+</script>
+
+
+<script>
+// FINAL LOGIN FIX - demo OTP, no backend required
+(function () {
+    window.generatedOTP = null;
+
+    window.openLogin = function () {
+        const modal = document.getElementById("loginModal");
+        if (!modal) { alert("Login window could not be found."); return; }
+        modal.style.display = "flex";
+        const mobileStep = document.getElementById("mobileStep");
+        const otpStep = document.getElementById("otpStep");
+        if (mobileStep) mobileStep.style.display = "block";
+        if (otpStep) otpStep.style.display = "none";
+        const msg = document.getElementById("otpMessage");
+        if (msg) msg.textContent = "";
+    };
+
+    window.closeLogin = function () {
+        const modal = document.getElementById("loginModal");
+        if (modal) modal.style.display = "none";
+    };
+
+    window.sendOTP = function () {
+        const input = document.getElementById("mobileNumber");
+        const mobile = input ? input.value.replace(/\D/g, "") : "";
+        if (!/^\d{10}$/.test(mobile)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            if (input) input.focus();
+            return;
+        }
+
+        window.generatedOTP = String(Math.floor(100000 + Math.random() * 900000));
+
+        const mobileStep = document.getElementById("mobileStep");
+        const otpStep = document.getElementById("otpStep");
+        const subtitle = document.getElementById("otpSubtitle");
+        const msg = document.getElementById("otpMessage");
+        if (mobileStep) mobileStep.style.display = "none";
+        if (otpStep) otpStep.style.display = "block";
+        if (subtitle) subtitle.textContent = "OTP sent to +91 " + mobile;
+        if (msg) msg.textContent = "Demo OTP: " + window.generatedOTP;
+
+        const boxes = document.querySelectorAll(".otp-box");
+        boxes.forEach((box, i) => { box.value = window.generatedOTP[i] || ""; });
+        if (boxes[0]) boxes[0].focus();
+        console.log("Demo OTP:", window.generatedOTP);
+    };
+
+    window.verifyOTP = function () {
+        let entered = "";
+        for (let i = 1; i <= 6; i++) {
+            const box = document.getElementById("otp" + i);
+            entered += box ? box.value : "";
+        }
+        const msg = document.getElementById("otpMessage");
+        if (!/^\d{6}$/.test(entered)) {
+            if (msg) msg.textContent = "Please enter all 6 OTP digits.";
+            return;
+        }
+        if (entered !== window.generatedOTP) {
+            if (msg) msg.textContent = "✕ Incorrect OTP. Please try again.";
+            return;
+        }
+        if (msg) msg.textContent = "✓ OTP verified successfully!";
+        const loginButton = document.getElementById("loginButton");
+        if (loginButton) loginButton.textContent = "✓ Logged In";
+        document.body.classList.add("logged-in");
+        setTimeout(window.closeLogin, 800);
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("loginModal");
+        if (modal) {
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) window.closeLogin();
+            });
+        }
+        document.querySelectorAll(".otp-box").forEach((box, index, boxes) => {
+            box.addEventListener("input", function () {
+                this.value = this.value.replace(/\D/g, "").slice(0, 1);
+                if (this.value && boxes[index + 1]) boxes[index + 1].focus();
+            });
+            box.addEventListener("keydown", function (e) {
+                if (e.key === "Backspace" && !this.value && boxes[index - 1]) boxes[index - 1].focus();
+            });
+        });
+    });
+})();
+</script>
 </body>
 
 </html>
