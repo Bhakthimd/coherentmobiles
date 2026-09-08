@@ -537,9 +537,87 @@
 
 
         /* =========================
+           BUY PHONE SECTION
+        ========================= */
+        .buy-section {
+            padding: 100px 8%;
+            background: linear-gradient(135deg, #fff7fa, #ffeaf2);
+        }
+        .buy-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .buy-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .buy-filters input,
+        .buy-filters select {
+            padding: 12px 15px;
+            border: 1px solid #e7cbd5;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            min-width: 180px;
+            background: white;
+        }
+        .buy-filters input:focus,
+        .buy-filters select:focus {
+            border-color: #d6336c;
+        }
+        .phone-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .phone-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .phone-card:hover {
+            transform: translateY(-5px);
+        }
+        .phone-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .phone-card p {
+            margin: 7px 0;
+            color: #555;
+        }
+        .phone-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+        .buy-now-btn {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+        .buy-now-btn:hover {
+            opacity: 0.85;
+        }
+        .no-phones {
+            text-align: center;
+            font-size: 18px;
+            margin: 30px 0;
+        }
+
+        /* =========================
            LOGIN MODAL
         ========================= */
-
         .login-modal {
             display: none;
 
@@ -853,7 +931,9 @@
                 Sell Phone
             </a>
 
-            <!-- Saniya will add Buy Phone here -->
+           <a href="#buySection">
+    Buy Phone
+</a>
 
             <!-- Anam will add Appointment here -->
 
@@ -1205,6 +1285,57 @@
 
     </section>
 
+
+    <!-- =========================
+         BUY PHONE SECTION
+    ========================= -->
+    <section id="buySection" class="buy-section">
+        <div class="buy-container">
+            <div class="section-heading">
+                <span>BUY A PHONE</span>
+                <h2>Find Your Perfect Phone</h2>
+                <p>Search and filter phones by name, brand, price and storage.</p>
+            </div>
+
+            <div class="buy-filters">
+                <input type="text" id="phoneSearch" placeholder="Search phone..." oninput="filterPhones()">
+
+                <select id="brandFilter" onchange="filterPhones()">
+                    <option value="">All Brands</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="OnePlus">OnePlus</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Realme">Realme</option>
+                    <option value="Vivo">Vivo</option>
+                    <option value="OPPO">OPPO</option>
+                </select>
+
+                <select id="priceFilter" onchange="filterPhones()">
+                    <option value="">All Prices</option>
+                    <option value="under20000">Under ₹20,000</option>
+                    <option value="20000-40000">₹20,000 - ₹40,000</option>
+                    <option value="above40000">Above ₹40,000</option>
+                </select>
+
+                <select id="storageFilter" onchange="filterPhones()">
+                    <option value="">All Storage</option>
+                    <option value="128">128 GB</option>
+                    <option value="256">256 GB</option>
+                    <option value="512">512 GB</option>
+                </select>
+
+                <select id="sortFilter" onchange="filterPhones()">
+                    <option value="">Sort By</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+
+            <div id="phoneCards" class="phone-cards"></div>
+        </div>
+    </section>
 
     <!-- =========================
          LOGIN MODAL
@@ -2373,7 +2504,173 @@
             );
 
         }
+// BUY PHONE DATA
 
+const buyPhones = [
+    {
+        name: "iPhone 15",
+        brand: "Apple",
+        storage: 128,
+        price: 69999
+    },
+    {
+        name: "iPhone 15 Pro",
+        brand: "Apple",
+        storage: 256,
+        price: 109999
+    },
+    {
+        name: "Galaxy S24",
+        brand: "Samsung",
+        storage: 256,
+        price: 74999
+    },
+    {
+        name: "Galaxy A55",
+        brand: "Samsung",
+        storage: 128,
+        price: 39999
+    },
+    {
+        name: "OnePlus 12",
+        brand: "OnePlus",
+        storage: 256,
+        price: 64999
+    },
+    {
+        name: "OnePlus Nord 4",
+        brand: "OnePlus",
+        storage: 128,
+        price: 29999
+    },
+    {
+        name: "Xiaomi 14",
+        brand: "Xiaomi",
+        storage: 512,
+        price: 69999
+    },
+    {
+        name: "Redmi Note 13 Pro",
+        brand: "Xiaomi",
+        storage: 256,
+        price: 29999
+    },
+    {
+        name: "Realme GT 6",
+        brand: "Realme",
+        storage: 256,
+        price: 44999
+    },
+    {
+        name: "Vivo V30",
+        brand: "Vivo",
+        storage: 256,
+        price: 33999
+    },
+    {
+        name: "OPPO Reno 12",
+        brand: "OPPO",
+        storage: 256,
+        price: 32999
+    }
+];
+
+function displayPhones(phones) {
+    const phoneCards = document.getElementById("phoneCards");
+
+    if (phones.length === 0) {
+        phoneCards.innerHTML =
+            '<p class="no-phones">No phones found.</p>';
+        return;
+    }
+
+    phoneCards.innerHTML = phones.map(phone => `
+        <div class="phone-card">
+            <h3>${phone.name}</h3>
+            <p><strong>Brand:</strong> ${phone.brand}</p>
+            <p><strong>Storage:</strong> ${phone.storage} GB</p>
+            <p class="phone-price">
+                ₹${phone.price.toLocaleString("en-IN")}
+            </p>
+
+            <button
+                class="buy-now-btn"
+                onclick="buyPhone('${phone.name}')"
+            >
+                Buy Now
+            </button>
+        </div>
+    `).join("");
+}
+
+function filterPhones() {
+
+    const search =
+        document.getElementById("phoneSearch").value.toLowerCase();
+
+    const brand =
+        document.getElementById("brandFilter").value;
+
+    const price =
+        document.getElementById("priceFilter").value;
+
+    const storage =
+        document.getElementById("storageFilter").value;
+
+    const sort =
+        document.getElementById("sortFilter").value;
+
+    let filteredPhones = buyPhones.filter(phone => {
+
+        const matchesSearch =
+            phone.name.toLowerCase().includes(search);
+
+        const matchesBrand =
+            brand === "" || phone.brand === brand;
+
+        const matchesStorage =
+            storage === "" ||
+            phone.storage === Number(storage);
+
+        let matchesPrice = true;
+
+        if (price === "under20000") {
+            matchesPrice = phone.price < 20000;
+        } else if (price === "20000-40000") {
+            matchesPrice =
+                phone.price >= 20000 &&
+                phone.price <= 40000;
+        } else if (price === "above40000") {
+            matchesPrice = phone.price > 40000;
+        }
+
+        return (
+            matchesSearch &&
+            matchesBrand &&
+            matchesStorage &&
+            matchesPrice
+        );
+    });
+
+    if (sort === "low") {
+        filteredPhones.sort((a, b) => a.price - b.price);
+    } else if (sort === "high") {
+        filteredPhones.sort((a, b) => b.price - a.price);
+    } else if (sort === "name") {
+        filteredPhones.sort((a, b) =>
+            a.name.localeCompare(b.name)
+        );
+    }
+
+    displayPhones(filteredPhones);
+}
+
+function buyPhone(phoneName) {
+    alert("You selected " + phoneName + " to buy.");
+}
+
+// Display phones when page loads
+displayPhones(buyPhones);
     </script>
 
 </body>
