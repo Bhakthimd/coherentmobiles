@@ -1824,7 +1824,7 @@ body.sell-page-active #sell-phone-section {
 
                 <button
                     class="secondary-btn"
-                    onclick="showComingSoon('Buy Phone')"
+                    onclick="document.getElementById('buySection').scrollIntoView({ behavior: 'smooth' })"
                 >
                     Buy a Phone
                 </button>
@@ -2068,6 +2068,150 @@ body.sell-page-active #sell-phone-section {
     .purchase-image img {
         height: 280px;
     }
+}
+/* =========================
+   PHONE DETAILS PAGE
+========================= */
+
+.phone-details-page {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.phone-details-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.phone-details-image {
+    flex: 1;
+    text-align: center;
+}
+
+.phone-details-image img {
+    width: 280px;
+    height: 320px;
+    object-fit: contain;
+}
+
+.phone-details-info {
+    flex: 1;
+}
+
+.phone-details-info h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.phone-rating {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.details-price {
+    font-size: 28px;
+}
+
+.specifications {
+    margin-top: 15px;
+}
+
+.details-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.back-btn {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   EXCHANGE PAGE
+========================= */
+
+.exchange-page {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.exchange-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.exchange-container h2 {
+    margin-bottom: 25px;
+}
+
+.exchange-new-phone {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.exchange-new-phone img {
+    width: 130px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.exchange-new-phone strong {
+    font-size: 24px;
+}
+
+.exchange-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.exchange-container select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.calculate-exchange-btn {
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.exchange-result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+
+.exchange-result h2 {
+    margin-top: 15px;
+}
+
+.exchange-result strong {
+    font-size: 18px;
 }
 </style>
 <section id="buySection" class="buy-section buy-phone-section">
@@ -3658,7 +3802,161 @@ function calculateSellPrice() {
     result.style.display = "block";
     result.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
+function showExchange(newPhoneName) {
+    const newPhone = buyPhones.find(p => p.name === newPhoneName);
 
+    if (!newPhone) return;
+
+    const phoneCards = document.getElementById("phoneCards");
+
+    phoneCards.innerHTML = `
+        <div class="exchange-page">
+
+            <button
+                class="back-btn"
+                onclick="showPhoneDetails('${newPhone.name}')">
+                ← Back to Phone Details
+            </button>
+
+            <div class="exchange-container">
+
+                <h2>Exchange Your Old Phone</h2>
+
+                <div class="exchange-new-phone">
+                    <img src="${newPhone.image}" alt="${newPhone.name}">
+
+                    <div>
+                        <h3>${newPhone.name}</h3>
+                        <p>New Phone Price:</p>
+                        <strong>
+                            ₹${newPhone.price.toLocaleString("en-IN")}
+                        </strong>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h3>Select Your Old Phone</h3>
+
+                <label>Phone Model</label>
+
+                <select id="exchangeModel">
+                    <option value="">Select phone model</option>
+                    ${Object.keys(sellBasePricesFinal).map(model => `
+                        <option value="${model}">
+                            ${model}
+                        </option>
+                    `).join("")}
+                </select>
+
+                <label>Storage</label>
+
+                <select id="exchangeStorage">
+                    <option value="">Select storage</option>
+                    <option value="128GB">128GB</option>
+                    <option value="256GB">256GB</option>
+                    <option value="512GB">512GB</option>
+                </select>
+
+                <label>Condition</label>
+
+                <select id="exchangeCondition">
+                    <option value="">Select condition</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="good">Good</option>
+                    <option value="fair">Fair</option>
+                    <option value="poor">Poor</option>
+                </select>
+
+                <button
+                    class="calculate-exchange-btn"
+                    onclick="calculateExchange('${newPhone.name}')">
+                    Calculate Exchange Value
+                </button>
+
+                <div
+                    id="exchangeResult"
+                    class="exchange-result"
+                    style="display:none;">
+                </div>
+
+            </div>
+        </div>
+    `;
+}
+
+
+function calculateExchange(newPhoneName) {
+
+    const model = document.getElementById("exchangeModel").value;
+    const storage = document.getElementById("exchangeStorage").value;
+    const condition = document.getElementById("exchangeCondition").value;
+    const result = document.getElementById("exchangeResult");
+
+    if (!model || !storage || !condition) {
+        alert("Please select all old phone details.");
+        return;
+    }
+
+    let exchangeValue = sellBasePricesFinal[model] || 15000;
+
+    if (storage === "256GB") exchangeValue += 3000;
+    if (storage === "512GB") exchangeValue += 6000;
+
+    const conditionFactor = {
+        excellent: 1,
+        good: 0.85,
+        fair: 0.70,
+        poor: 0.50
+    };
+
+    exchangeValue *= conditionFactor[condition];
+
+    exchangeValue = Math.round(exchangeValue / 100) * 100;
+
+    const newPhone = buyPhones.find(
+        p => p.name === newPhoneName
+    );
+
+    const finalPrice = newPhone.price - exchangeValue;
+
+    result.innerHTML = `
+        <h3>Exchange Estimate</h3>
+
+        <p>
+            Old Phone Exchange Value:
+            <strong>
+                -₹${exchangeValue.toLocaleString("en-IN")}
+            </strong>
+        </p>
+
+        <p>
+            New Phone Price:
+            <strong>
+                ₹${newPhone.price.toLocaleString("en-IN")}
+            </strong>
+        </p>
+
+        <hr>
+
+        <h2>
+            Final Price:
+            ₹${Math.max(finalPrice, 0).toLocaleString("en-IN")}
+        </h2>
+
+        <button
+            class="buy-now-btn"
+            onclick="buyPhone('${newPhone.name}')">
+            Apply Exchange & Buy
+        </button>
+    `;
+
+    result.style.display = "block";
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+}
 function goToSell() {
     showSellPage();
 }
@@ -3873,6 +4171,7 @@ document.addEventListener("click", function(event) {
         });
     });
 })();
+
 // BUY PHONE DATA
 
 const buyPhones = [
@@ -3881,6 +4180,7 @@ const buyPhones = [
         brand: "Apple",
         storage: 128,
         price: 69999,
+        rating: 4.7,
         image: "images/iphone15.jpg"
     },
     {
@@ -3888,6 +4188,7 @@ const buyPhones = [
         brand: "Apple",
         storage: 256,
         price: 109999,
+        rating: 4.8,
         image: "images/iphone15pro.jpg"
     },
     {
@@ -3895,6 +4196,7 @@ const buyPhones = [
         brand: "Samsung",
         storage: 256,
         price: 74999,
+        rating: 4.6,
         image: "images/galaxy-s24.jpg"
     },
     {
@@ -3902,6 +4204,7 @@ const buyPhones = [
         brand: "Samsung",
         storage: 128,
         price: 39999,
+        rating: 4.5,
         image: "images/galaxy-a55.jpg"
     },
     {
@@ -3909,6 +4212,7 @@ const buyPhones = [
         brand: "OnePlus",
         storage: 256,
         price: 64999,
+        rating: 4.7,
         image: "images/oneplus12.jpg"
     },
     {
@@ -3916,6 +4220,7 @@ const buyPhones = [
         brand: "OnePlus",
         storage: 128,
         price: 29999,
+        rating: 4.5,
         image: "images/oneplus-nord4.jpg"
     },
     {
@@ -3923,6 +4228,7 @@ const buyPhones = [
         brand: "Xiaomi",
         storage: 512,
         price: 69999,
+        rating: 4.6,
         image: "images/xiaomi14.jpg"
     },
     {
@@ -3930,6 +4236,7 @@ const buyPhones = [
         brand: "Xiaomi",
         storage: 256,
         price: 29999,
+        rating: 4.4,
         image: "images/redmi-note-13-pro.jpg"
     },
     {
@@ -3937,6 +4244,7 @@ const buyPhones = [
         brand: "Realme",
         storage: 256,
         price: 44999,
+        rating: 4.5,
         image: "images/realme-gt6.jpg"
     },
     {
@@ -3944,6 +4252,7 @@ const buyPhones = [
         brand: "Vivo",
         storage: 256,
         price: 33999,
+        rating: 4.4,
         image: "images/vivo-v30.jpg"
     },
     {
@@ -3951,10 +4260,10 @@ const buyPhones = [
         brand: "OPPO",
         storage: 256,
         price: 32999,
+        rating: 4.3,
         image: "images/oppo-reno12.jpg"
     }
 ];
-
 function displayPhones(phones) {
     const phoneCards = document.getElementById("phoneCards");
 
@@ -3968,28 +4277,56 @@ function displayPhones(phones) {
 
     phoneCards.innerHTML = phones.map(phone => `
         <div class="phone-card">
-            <img src="${phone.image}" alt="${phone.name}" class="phone-image">
+
+            <img
+                src="${phone.image}"
+                alt="${phone.name}"
+                class="phone-image"
+            >
 
             <h3>${phone.name}</h3>
 
-            <p><strong>Brand:</strong> ${phone.brand}</p>
+            <p>
+                <strong>Brand:</strong> ${phone.brand}
+            </p>
 
-            <p><strong>Storage:</strong> ${phone.storage} GB</p>
+            <p>
+                <strong>Storage:</strong> ${phone.storage} GB
+            </p>
 
             <p class="phone-price">
                 ₹${phone.price.toLocaleString("en-IN")}
             </p>
 
-            <button
-                class="buy-now-btn"
-                onclick="buyPhone('${phone.name}')"
-            >
-                Buy Now
-            </button>
+            <p class="phone-rating">
+                ⭐ ${phone.rating} / 5
+            </p>
+
+            <div class="phone-actions">
+
+                <button
+                    class="details-btn"
+                    onclick="showPhoneDetails('${phone.name}')">
+                    View Details
+                </button>
+
+                <button
+                    class="buy-now-btn"
+                    onclick="buyPhone('${phone.name}')">
+                    Buy Now
+                </button>
+
+                <button
+                    class="exchange-btn"
+                    onclick="showExchange('${phone.name}')">
+                    Exchange
+                </button>
+
+            </div>
+
         </div>
     `).join("");
 }
-
 function filterPhones() {
     const search =
         document.getElementById("phoneSearch").value.toLowerCase();
@@ -4050,7 +4387,103 @@ function filterPhones() {
 
     displayPhones(filteredPhones);
 }
+function showPhoneDetails(phoneName) {
+    const phone = buyPhones.find(p => p.name === phoneName);
 
+    if (!phone) return;
+
+    const phoneCards = document.getElementById("phoneCards");
+
+    phoneCards.innerHTML = `
+        <div class="phone-details-page">
+
+            <button
+                class="back-btn"
+                onclick="displayPhones(buyPhones)">
+                ← Back to Phones
+            </button>
+
+            <div class="phone-details-container">
+
+                <div class="phone-details-image">
+                    <img
+                        src="${phone.image}"
+                        alt="${phone.name}"
+                    >
+                </div>
+
+                <div class="phone-details-info">
+
+                    <h2>${phone.name}</h2>
+
+                    <p class="phone-rating">
+                        ⭐ ${phone.rating} / 5
+                    </p>
+
+                    <p>
+                        <strong>Brand:</strong>
+                        ${phone.brand}
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        ${phone.storage} GB
+                    </p>
+
+                    <h3 class="details-price">
+                        ₹${phone.price.toLocaleString("en-IN")}
+                    </h3>
+
+                    <hr>
+
+                    <h3>Specifications</h3>
+
+                    <div class="specifications">
+
+                        <p>
+                            <strong>Brand:</strong>
+                            ${phone.brand}
+                        </p>
+
+                        <p>
+                            <strong>Storage:</strong>
+                            ${phone.storage} GB
+                        </p>
+
+                        <p>
+                            <strong>Rating:</strong>
+                            ⭐ ${phone.rating} / 5
+                        </p>
+
+                        <p>
+                            <strong>Availability:</strong>
+                            In Stock
+                        </p>
+
+                    </div>
+
+                    <div class="details-actions">
+
+                        <button
+                            class="buy-now-btn"
+                            onclick="buyPhone('${phone.name}')">
+                            Buy Now
+                        </button>
+
+                        <button
+                            class="exchange-btn"
+                            onclick="showExchange('${phone.name}')">
+                            Exchange
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    `;
+}
 function buyPhone(phoneName) {
     const phone = buyPhones.find(p => p.name === phoneName);
 
