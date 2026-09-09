@@ -17,6 +17,7 @@
 
     <style>
 
+
         /* =========================
            RESET
         ========================= */
@@ -1839,6 +1840,283 @@ body.sell-page-active #sell-phone-section {
 
     </section>
 
+<style>
+/* =========================
+   BUY PHONE SECTION
+========================= */
+.buy-section {
+    padding: 100px 8%;
+    background: linear-gradient(135deg, #fff7fa, #ffeaf2);
+}
+
+.buy-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.buy-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.buy-filters input,
+.buy-filters select {
+    padding: 12px 15px;
+    border: 1px solid #e7cbd5;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    min-width: 180px;
+    background: white;
+}
+
+.buy-filters input:focus,
+.buy-filters select:focus {
+    border-color: #d6336c;
+}
+
+.phone-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.phone-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.phone-card:hover {
+    transform: translateY(-5px);
+}
+
+.phone-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.phone-card p {
+    margin: 7px 0;
+    color: #555;
+}
+
+.phone-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.buy-now-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.buy-now-btn:hover {
+    opacity: 0.85;
+}
+
+.no-phones {
+    text-align: center;
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+/* Phone images */
+.phone-image {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    display: block;
+}
+/* =========================
+   PURCHASE PAGE
+========================= */
+
+.purchase-page {
+    padding: 80px 8%;
+    background: linear-gradient(135deg, #fff7fa, #ffeaf2);
+}
+
+.purchase-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.back-buy-btn {
+    border: none;
+    background: #8f2852;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.purchase-card {
+    background: white;
+    border-radius: 18px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.purchase-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchase-image img {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.purchase-details h2 {
+    font-size: 32px;
+    margin: 10px 0 20px;
+}
+
+.purchase-details p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.purchase-tag {
+    color: #d6336c;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.purchase-price-box {
+    background: #fff0f6;
+    padding: 18px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.purchase-price-box p {
+    margin: 5px 0;
+}
+
+.purchase-price-box h3 {
+    margin: 5px 0 15px;
+    color: #8f2852;
+    font-size: 22px;
+}
+
+.customer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.customer-form input,
+.customer-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e1c5d0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.customer-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.place-order-btn {
+    border: none;
+    background: #d6336c;
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.place-order-btn:hover,
+.back-buy-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .purchase-card {
+        grid-template-columns: 1fr;
+    }
+
+    .purchase-image img {
+        height: 280px;
+    }
+}
+</style>
+<section id="buySection" class="buy-section buy-phone-section">
+    <div class="buy-container">
+        <div class="section-heading">
+            <span>BUY A PHONE</span>
+            <h2>Find Your Perfect Phone</h2>
+            <p>Search and filter phones by name, brand, price and storage.</p>
+        </div>
+
+        <div class="buy-filters">
+            <input type="text" id="phoneSearch" placeholder="Search phone..." oninput="filterPhones()">
+
+            <select id="brandFilter" onchange="filterPhones()">
+                <option value="">All Brands</option>
+                <option value="Apple">Apple</option>
+                <option value="Samsung">Samsung</option>
+                <option value="OnePlus">OnePlus</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Realme">Realme</option>
+                <option value="Vivo">Vivo</option>
+                <option value="OPPO">OPPO</option>
+            </select>
+
+            <select id="priceFilter" onchange="filterPhones()">
+                <option value="">All Prices</option>
+                <option value="under20000">Under ₹20,000</option>
+                <option value="20000-40000">₹20,000 - ₹40,000</option>
+                <option value="above40000">Above ₹40,000</option>
+            </select>
+
+            <select id="storageFilter" onchange="filterPhones()">
+                <option value="">All Storage</option>
+                <option value="128">128 GB</option>
+                <option value="256">256 GB</option>
+                <option value="512">512 GB</option>
+            </select>
+
+            <select id="sortFilter" onchange="filterPhones()">
+                <option value="">Sort By</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
+        </div>
+
+        <div id="phoneCards" class="phone-cards"></div>
+    </div>
+</section>
 
     <!-- =========================
          SELL PHONE SECTION
@@ -3595,6 +3873,309 @@ document.addEventListener("click", function(event) {
         });
     });
 })();
+// BUY PHONE DATA
+
+const buyPhones = [
+    {
+        name: "iPhone 15",
+        brand: "Apple",
+        storage: 128,
+        price: 69999,
+        image: "images/iphone15.jpg"
+    },
+    {
+        name: "iPhone 15 Pro",
+        brand: "Apple",
+        storage: 256,
+        price: 109999,
+        image: "images/iphone15pro.jpg"
+    },
+    {
+        name: "Galaxy S24",
+        brand: "Samsung",
+        storage: 256,
+        price: 74999,
+        image: "images/galaxy-s24.jpg"
+    },
+    {
+        name: "Galaxy A55",
+        brand: "Samsung",
+        storage: 128,
+        price: 39999,
+        image: "images/galaxy-a55.jpg"
+    },
+    {
+        name: "OnePlus 12",
+        brand: "OnePlus",
+        storage: 256,
+        price: 64999,
+        image: "images/oneplus12.jpg"
+    },
+    {
+        name: "OnePlus Nord 4",
+        brand: "OnePlus",
+        storage: 128,
+        price: 29999,
+        image: "images/oneplus-nord4.jpg"
+    },
+    {
+        name: "Xiaomi 14",
+        brand: "Xiaomi",
+        storage: 512,
+        price: 69999,
+        image: "images/xiaomi14.jpg"
+    },
+    {
+        name: "Redmi Note 13 Pro",
+        brand: "Xiaomi",
+        storage: 256,
+        price: 29999,
+        image: "images/redmi-note-13-pro.jpg"
+    },
+    {
+        name: "Realme GT 6",
+        brand: "Realme",
+        storage: 256,
+        price: 44999,
+        image: "images/realme-gt6.jpg"
+    },
+    {
+        name: "Vivo V30",
+        brand: "Vivo",
+        storage: 256,
+        price: 33999,
+        image: "images/vivo-v30.jpg"
+    },
+    {
+        name: "OPPO Reno 12",
+        brand: "OPPO",
+        storage: 256,
+        price: 32999,
+        image: "images/oppo-reno12.jpg"
+    }
+];
+
+function displayPhones(phones) {
+    const phoneCards = document.getElementById("phoneCards");
+
+    if (!phoneCards) return;
+
+    if (phones.length === 0) {
+        phoneCards.innerHTML =
+            '<p class="no-phones">No phones found.</p>';
+        return;
+    }
+
+    phoneCards.innerHTML = phones.map(phone => `
+        <div class="phone-card">
+            <img src="${phone.image}" alt="${phone.name}" class="phone-image">
+
+            <h3>${phone.name}</h3>
+
+            <p><strong>Brand:</strong> ${phone.brand}</p>
+
+            <p><strong>Storage:</strong> ${phone.storage} GB</p>
+
+            <p class="phone-price">
+                ₹${phone.price.toLocaleString("en-IN")}
+            </p>
+
+            <button
+                class="buy-now-btn"
+                onclick="buyPhone('${phone.name}')"
+            >
+                Buy Now
+            </button>
+        </div>
+    `).join("");
+}
+
+function filterPhones() {
+    const search =
+        document.getElementById("phoneSearch").value.toLowerCase();
+
+    const brand =
+        document.getElementById("brandFilter").value;
+
+    const price =
+        document.getElementById("priceFilter").value;
+
+    const storage =
+        document.getElementById("storageFilter").value;
+
+    const sort =
+        document.getElementById("sortFilter").value;
+
+    let filteredPhones = buyPhones.filter(phone => {
+
+        const matchesSearch =
+            phone.name.toLowerCase().includes(search);
+
+        const matchesBrand =
+            brand === "" || phone.brand === brand;
+
+        const matchesStorage =
+            storage === "" ||
+            phone.storage === Number(storage);
+
+        let matchesPrice = true;
+
+        if (price === "under20000") {
+            matchesPrice = phone.price < 20000;
+        } else if (price === "20000-40000") {
+            matchesPrice =
+                phone.price >= 20000 &&
+                phone.price <= 40000;
+        } else if (price === "above40000") {
+            matchesPrice = phone.price > 40000;
+        }
+
+        return (
+            matchesSearch &&
+            matchesBrand &&
+            matchesStorage &&
+            matchesPrice
+        );
+    });
+
+    if (sort === "low") {
+        filteredPhones.sort((a, b) => a.price - b.price);
+    } else if (sort === "high") {
+        filteredPhones.sort((a, b) => b.price - a.price);
+    } else if (sort === "name") {
+        filteredPhones.sort((a, b) =>
+            a.name.localeCompare(b.name)
+        );
+    }
+
+    displayPhones(filteredPhones);
+}
+
+function buyPhone(phoneName) {
+    const phone = buyPhones.find(p => p.name === phoneName);
+
+    if (!phone) return;
+
+    let purchasePage = document.getElementById("purchasePage");
+
+    if (purchasePage) {
+        purchasePage.remove();
+    }
+
+    purchasePage = document.createElement("section");
+    purchasePage.id = "purchasePage";
+    purchasePage.className = "purchase-page";
+
+    purchasePage.innerHTML = `
+        <div class="purchase-container">
+
+            <button class="back-buy-btn" onclick="closePurchasePage()">
+                ← Back to Phones
+            </button>
+
+            <div class="purchase-card">
+
+                <div class="purchase-image">
+                    <img src="${phone.image}" alt="${phone.name}">
+                </div>
+
+                <div class="purchase-details">
+
+                    <span class="purchase-tag">PURCHASE PHONE</span>
+
+                    <h2>${phone.name}</h2>
+
+                    <p><strong>Brand:</strong> ${phone.brand}</p>
+
+                    <p><strong>Storage:</strong> ${phone.storage} GB</p>
+
+                    <div class="purchase-price-box">
+                        <p>Listed Price</p>
+                        <h3>₹${phone.price.toLocaleString("en-IN")}</h3>
+
+                        <p>Predicted Price</p>
+                        <h3>
+                            ₹${Math.round(phone.price * 0.95).toLocaleString("en-IN")}
+                        </h3>
+                    </div>
+
+                    <h3>Delivery Details</h3>
+
+                    <div class="customer-form">
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your name"
+                        >
+
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            placeholder="Enter phone number"
+                        >
+
+                        <textarea
+                            id="customerAddress"
+                            placeholder="Enter delivery address"
+                        ></textarea>
+
+                        <button
+                            class="place-order-btn"
+                            onclick="placeOrder('${phone.name}')"
+                        >
+                            Place Order
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(purchasePage);
+
+    purchasePage.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function closePurchasePage() {
+    const purchasePage = document.getElementById("purchasePage");
+
+    if (purchasePage) {
+        purchasePage.remove();
+    }
+
+    document.getElementById("buySection").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function placeOrder(phoneName) {
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const address = document.getElementById("customerAddress").value.trim();
+
+    if (name === "" || phone === "" || address === "") {
+        alert("Please fill all delivery details.");
+        return;
+    }
+
+    alert(
+        "Order placed successfully for " +
+        phoneName +
+        "!\nThank you, " +
+        name
+    );
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    displayPhones(buyPhones);
+});
 </script>
 </body>
 
