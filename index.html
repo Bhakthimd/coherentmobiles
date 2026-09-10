@@ -2747,6 +2747,1829 @@ footer p{color:#d5b4c4;font-size:13px;margin:4px 0}
   .eval-bottom-bar{flex-direction:column;align-items:flex-start}
 }
 </style>
+<style>
+
+/* =========================================================
+   SANIA'S ADDED STYLES: BUY PHONE FILTERS, CARDS, DETAILS, EXCHANGE,
+   PURCHASE, APPOINTMENT BOOKING & CELEBRATION
+   ========================================================= */
+/* =====================================
+   BUY PHONE - DEMO STYLE FILTER LAYOUT
+   ===================================== */
+
+.buy-filter-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 25px auto 10px;
+    max-width: 1100px;
+}
+
+/* LEFT SIDE */
+.buy-filter-left {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.buy-filter-left input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    background: #fff;
+    box-sizing: border-box;
+    transition: 0.25s ease;
+}
+
+.buy-filter-left input::placeholder {
+    color: #999;
+}
+
+.buy-filter-left input:focus {
+    border-color: #d6336c;
+    box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.08);
+}
+
+.buy-filter-left select {
+    width: 155px;
+    height: 42px;
+    padding: 0 13px;
+    border: 1px solid #dedede;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+    color: #444;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.buy-filter-left select:hover,
+.buy-filter-left select:focus {
+    border-color: #d6336c;
+}
+
+/* RIGHT SIDE - BRAND BUTTONS */
+
+.brand-buttons {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 5px;
+    flex-wrap: wrap;
+}
+
+.brand-btn {
+    border: 1px solid #e1e1e1;
+    background: #fff;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #444;
+    transition: 0.25s ease;
+}
+
+.brand-btn:hover {
+    border-color: #d6336c;
+    color: #d6336c;
+    transform: translateY(-1px);
+}
+
+.brand-btn.active {
+    background: #d6336c;
+    border-color: #d6336c;
+    color: white;
+    box-shadow: 0 4px 10px rgba(214, 51, 108, 0.2);
+}
+
+/* =====================================
+   PRICE SLIDER
+   ===================================== */
+
+.price-range-filter {
+    width: 100%;
+    max-width: 700px;
+    margin: 18px 0 30px 0;
+    padding-left: 0;
+}
+
+.price-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.min-price-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+}
+
+.price-slider {
+    position: relative;
+    flex: 1;
+    height: 25px;
+}
+
+.price-slider input[type="range"] {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 100%;
+    height: 6px;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+.price-slider input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #bfc3cc;
+    border-radius: 5px;
+}
+
+.price-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    margin-top: -5px;
+    border-radius: 50%;
+    background: #d6336c;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.price-slider input[type="range"]::-moz-range-track {
+    height: 5px;
+    background: #bfc3cc;
+    border-radius: 5px;
+}
+
+.price-slider input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #d6336c;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.price-slider-row strong {
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+}
+
+
+/* =====================================
+   PHONE CARDS
+   ===================================== */
+
+.phone-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 20px auto 0;
+}
+
+
+/* =====================================
+   MOBILE
+   ===================================== */
+
+@media (max-width: 768px) {
+
+    .buy-filter-layout {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .buy-filter-left {
+        width: 100%;
+    }
+
+    .brand-buttons {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .price-range-filter {
+        max-width: 100%;
+    }
+
+    .phone-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* =====================================
+   PHONE CARD BUTTON LAYOUT
+   ===================================== */
+
+.phone-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 18px;
+    width: 100%;
+}
+
+/* View Details + Buy Now */
+.phone-actions .details-btn,
+.phone-actions .buy-now-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 44px;
+    padding: 0 12px;
+    margin: 0 !important;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* View Details */
+.phone-actions .details-btn {
+    background: white;
+    color: #333;
+    border: 1px solid #d9d9d9;
+}
+
+.phone-actions .details-btn:hover {
+    border-color: #d6336c;
+    color: #d6336c;
+    transform: translateY(-2px);
+}
+
+/* Buy Now */
+.phone-actions .buy-now-btn {
+    background: #d6336c;
+    color: white;
+    border: 1px solid #d6336c;
+}
+
+.phone-actions .buy-now-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Exchange - full width */
+.phone-actions .exchange-btn {
+    grid-column: 1 / -1;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 44px;
+    padding: 0 12px;
+    margin: 0 !important;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: white;
+    color: #333;
+    border: 1px solid #d9d9d9;
+}
+
+.phone-actions .exchange-btn:hover {
+    border-color: #d6336c;
+    color: #d6336c;
+    transform: translateY(-2px);
+}
+
+
+
+/* =========================
+   APPOINTMENT PAGE
+========================= */
+
+.appointment-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.appointment-left,
+.appointment-right {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.appointment-page h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.appointment-subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.appointment-page label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.appointment-page input,
+.appointment-page select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+}
+
+.selected-method {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    margin: 20px 0;
+    border: 2px solid #d6336c;
+    border-radius: 12px;
+    background: #fff0f6;
+}
+
+.method-icon {
+    font-size: 35px;
+}
+
+.selected-method h3 {
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.selected-method p {
+    margin: 0;
+    color: #777;
+}
+
+.confirm-appointment-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #d6336c;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.confirm-appointment-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* =========================
+   APPOINTMENT CONFIRMATION
+========================= */
+
+.appointment-confirmed {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 45px;
+    text-align: center;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.success-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #d6336c;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.appointment-confirmed h2 {
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.appointment-confirmed > p {
+    color: #777;
+    line-height: 1.6;
+}
+
+.appointment-summary {
+    margin: 25px 0;
+    padding: 20px;
+    text-align: left;
+    background: #f8f8f8;
+    border-radius: 12px;
+}
+
+.appointment-summary p {
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .appointment-page {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-left,
+    .appointment-right {
+        padding: 22px;
+    }
+
+    .appointment-confirmed {
+        padding: 30px 20px;
+    }
+}
+/* =====================================
+   BUY PHONE - DEMO STYLE FILTER LAYOUT
+   ===================================== */
+
+.buy-filter-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 25px auto 10px;
+    max-width: 1100px;
+}
+
+/* LEFT SIDE */
+.buy-filter-left {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.buy-filter-left input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    background: #fff;
+    box-sizing: border-box;
+    transition: 0.25s ease;
+}
+
+.buy-filter-left input::placeholder {
+    color: #999;
+}
+
+.buy-filter-left input:focus {
+    border-color: #d6336c;
+    box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.08);
+}
+
+.buy-filter-left select {
+    width: 155px;
+    height: 42px;
+    padding: 0 13px;
+    border: 1px solid #dedede;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+    color: #444;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.buy-filter-left select:hover,
+.buy-filter-left select:focus {
+    border-color: #d6336c;
+}
+
+/* RIGHT SIDE - BRAND BUTTONS */
+
+.brand-buttons {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 5px;
+    flex-wrap: wrap;
+}
+
+.brand-btn {
+    border: 1px solid #e1e1e1;
+    background: #fff;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #444;
+    transition: 0.25s ease;
+}
+
+.brand-btn:hover {
+    border-color: #d6336c;
+    color: #d6336c;
+    transform: translateY(-1px);
+}
+
+.brand-btn.active {
+    background: #d6336c;
+    border-color: #d6336c;
+    color: white;
+    box-shadow: 0 4px 10px rgba(214, 51, 108, 0.2);
+}
+
+/* =====================================
+   PRICE SLIDER
+   ===================================== */
+
+.price-range-filter {
+    width: 100%;
+    max-width: 700px;
+    margin: 18px 0 30px 0;
+    padding-left: 0;
+}
+
+.price-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.min-price-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+}
+
+.price-slider {
+    position: relative;
+    flex: 1;
+    height: 25px;
+}
+
+.price-slider input[type="range"] {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 100%;
+    height: 6px;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+.price-slider input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #bfc3cc;
+    border-radius: 5px;
+}
+
+.price-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    margin-top: -5px;
+    border-radius: 50%;
+    background: #d6336c;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.price-slider input[type="range"]::-moz-range-track {
+    height: 5px;
+    background: #bfc3cc;
+    border-radius: 5px;
+}
+
+.price-slider input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #d6336c;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.price-slider-row strong {
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+}
+
+
+/* =====================================
+   PHONE CARDS
+   ===================================== */
+
+.phone-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 20px auto 0;
+}
+
+
+/* =====================================
+   MOBILE
+   ===================================== */
+
+@media (max-width: 768px) {
+
+    .buy-filter-layout {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .buy-filter-left {
+        width: 100%;
+    }
+
+    .brand-buttons {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .price-range-filter {
+        max-width: 100%;
+    }
+
+    .phone-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* =====================================
+   PHONE CARD BUTTON LAYOUT
+   ===================================== */
+
+.phone-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 18px;
+    width: 100%;
+}
+
+/* View Details + Buy Now */
+.phone-actions .details-btn,
+.phone-actions .buy-now-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 44px;
+    padding: 0 12px;
+    margin: 0 !important;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* View Details */
+.phone-actions .details-btn {
+    background: white;
+    color: #333;
+    border: 1px solid #d9d9d9;
+}
+
+.phone-actions .details-btn:hover {
+    border-color: #d6336c;
+    color: #d6336c;
+    transform: translateY(-2px);
+}
+
+/* Buy Now */
+.phone-actions .buy-now-btn {
+    background: #d6336c;
+    color: white;
+    border: 1px solid #d6336c;
+}
+
+.phone-actions .buy-now-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Exchange - full width */
+.phone-actions .exchange-btn {
+    grid-column: 1 / -1;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 44px;
+    padding: 0 12px;
+    margin: 0 !important;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: white;
+    color: #333;
+    border: 1px solid #d9d9d9;
+}
+
+.phone-actions .exchange-btn:hover {
+    border-color: #d6336c;
+    color: #d6336c;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* =========================
+   BUY PHONE SECTION
+========================= */
+.buy-section {
+    padding: 100px 8%;
+    background: linear-gradient(135deg, #fff7fa, #ffeaf2);
+}
+
+.buy-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.buy-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.buy-filters input,
+.buy-filters select {
+    padding: 12px 15px;
+    border: 1px solid #e7cbd5;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    min-width: 180px;
+    background: white;
+}
+
+.buy-filters input:focus,
+.buy-filters select:focus {
+    border-color: #d6336c;
+}
+
+.phone-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.phone-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.phone-card:hover {
+    transform: translateY(-5px);
+}
+
+.phone-card h3 {
+    margin: 5px 0 8px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.phone-card p {
+    margin: 6px 0;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.phone-price {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0 14px;
+}
+.buy-now-btn {
+    border: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+    background: #d6336c;
+    color: white;
+    transition: 0.25s ease;
+}
+
+.buy-now-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.no-phones {
+    text-align: center;
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+/* Phone images */
+.phone-image {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    display: block;
+}
+/* PRICE RANGE SLIDER */
+
+.price-range-filter {
+    width: 100%;
+    max-width: 300px;
+    margin: 25px auto;
+}
+
+.price-range-title {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.price-slider {
+    position: relative;
+    width: 100%;
+    height: 24px;
+}
+
+/* Both controls use the same track */
+.price-slider input[type="range"] {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 100%;
+    height: 6px;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    pointer-events: none;
+}
+
+/* Track */
+.price-slider input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #bfc3cc;
+    border-radius: 5px;
+}
+
+/* Knob */
+.price-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    margin-top: -4px;
+    border-radius: 50%;
+    background: #d6336c;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Firefox */
+.price-slider input[type="range"]::-moz-range-track {
+    height: 5px;
+    background: #bfc3cc;
+    border-radius: 5px;
+}
+
+.price-slider input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #d6336c;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+/* Prices directly beside the slider */
+.price-range-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2px;
+    font-size: 14px;
+    color: #555;
+}
+/* =========================
+   PURCHASE PAGE
+========================= */
+
+.purchase-page {
+    padding: 80px 8%;
+    background: linear-gradient(135deg, #fff7fa, #ffeaf2);
+}
+
+.purchase-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.back-buy-btn {
+    border: none;
+    background: #8f2852;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.purchase-card {
+    background: white;
+    border-radius: 18px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.purchase-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchase-image img {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.purchase-details h2 {
+    font-size: 32px;
+    margin: 10px 0 20px;
+}
+
+.purchase-details p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.purchase-tag {
+    color: #d6336c;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.purchase-price-box {
+    background: #fff0f6;
+    padding: 18px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.purchase-price-box p {
+    margin: 5px 0;
+}
+
+.purchase-price-box h3 {
+    margin: 5px 0 15px;
+    color: #8f2852;
+    font-size: 22px;
+}
+
+.customer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.customer-form input,
+.customer-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e1c5d0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.customer-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.place-order-btn {
+    border: none;
+    background: #d6336c;
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.place-order-btn:hover,
+.back-buy-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .purchase-card {
+        grid-template-columns: 1fr;
+    }
+
+    .purchase-image img {
+        height: 280px;
+    }
+}
+/* =========================
+   CHECKOUT PROGRESS
+========================= */
+
+.checkout-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0 40px;
+    gap: 12px;
+}
+
+.progress-step {
+    text-align: center;
+    min-width: 100px;
+}
+
+.progress-step span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin: auto;
+    border-radius: 50%;
+    background: #ddd;
+    color: #777;
+    font-weight: bold;
+}
+
+.progress-step p {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #777;
+}
+
+.progress-step.active span,
+.progress-step.completed span {
+    background: #d6336c;
+    color: white;
+}
+
+.progress-step.active p,
+.progress-step.completed p {
+    color: #8f2852;
+    font-weight: bold;
+}
+
+.progress-line {
+    height: 3px;
+    width: 100px;
+    background: #ddd;
+}
+
+.completed-line {
+    background: #d6336c;
+}
+
+
+/* =========================
+   PHONE RATING
+========================= */
+
+.phone-rating {
+    margin: 10px 0 18px;
+    color: #555;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* =========================
+   PHONE HIGHLIGHTS
+========================= */
+
+.phone-highlights {
+    background: #fff7fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.phone-highlights div {
+    margin: 8px 0;
+    color: #555;
+}
+
+
+/* =========================
+   PROCEED CHECKOUT BUTTON
+========================= */
+
+.proceed-checkout-btn,
+.continue-checkout-btn {
+    width: 100%;
+    border: none;
+    background: #d6336c;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.proceed-checkout-btn:hover,
+.continue-checkout-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   CHECKOUT PAGE
+========================= */
+
+.checkout-page {
+    background: white;
+    border-radius: 18px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.checkout-left h2,
+.checkout-right h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+
+/* PHONE SUMMARY */
+
+.checkout-phone {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff7fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.checkout-phone img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.checkout-phone h3 {
+    margin: 0 0 8px;
+}
+
+
+/* COUPON */
+
+.coupon-box {
+    margin-top: 25px;
+}
+
+.coupon-input {
+    display: flex;
+    gap: 10px;
+}
+
+.coupon-input input {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.coupon-input button {
+    border: none;
+    background: #8f2852;
+    color: white;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.coupon-success {
+    color: green;
+    font-weight: bold;
+}
+
+.coupon-error {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* PRICE */
+
+.checkout-right {
+    background: #fff7fa;
+    padding: 25px;
+    border-radius: 14px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0;
+    color: #555;
+}
+
+.discount-row {
+    color: green;
+}
+
+.price-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: bold;
+    color: #8f2852;
+    margin-top: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .checkout-progress {
+        gap: 5px;
+    }
+
+    .progress-line {
+        width: 35px;
+    }
+
+    .progress-step {
+        min-width: 70px;
+    }
+
+    .progress-step p {
+        font-size: 11px;
+    }
+
+    .checkout-page {
+        grid-template-columns: 1fr;
+    }
+
+    .coupon-input {
+        flex-direction: column;
+    }
+
+    .coupon-input button {
+        padding: 12px;
+    }
+}
+/* =========================
+   PHONE DETAILS PAGE
+========================= */
+
+.phone-details-page {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.phone-details-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.phone-details-image {
+    flex: 1;
+    text-align: center;
+}
+
+.phone-details-image img {
+    width: 280px;
+    height: 320px;
+    object-fit: contain;
+}
+
+.phone-details-info {
+    flex: 1;
+}
+
+.phone-details-info h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.phone-rating {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.details-price {
+    font-size: 28px;
+}
+
+.specifications {
+    margin-top: 15px;
+}
+
+.details-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.back-btn {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   EXCHANGE PAGE
+========================= */
+
+.exchange-page {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.exchange-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.exchange-container h2 {
+    margin-bottom: 25px;
+}
+
+.exchange-new-phone {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.exchange-new-phone img {
+    width: 130px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.exchange-new-phone strong {
+    font-size: 24px;
+}
+
+.exchange-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.exchange-container select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.calculate-exchange-btn {
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.exchange-result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+
+.exchange-result h2 {
+    margin-top: 15px;
+}
+
+.exchange-result strong {
+    font-size: 18px;
+}
+.exchange-result strong {
+    font-size: 18px;
+}
+
+
+/* =========================
+   VERIFICATION OPTIONS
+========================= */
+
+.verification-page {
+    background: white;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.verification-page h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.verification-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.verification-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.verification-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+    border: 2px solid #eee;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.verification-option:hover {
+    border-color: #d6336c;
+    transform: translateY(-2px);
+}
+
+.verification-option.selected {
+    border-color: #d6336c;
+    background: #fff0f6;
+}
+
+.verification-icon {
+    font-size: 38px;
+}
+
+.verification-option h3 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.verification-option p {
+    margin: 0;
+    color: #777;
+    line-height: 1.5;
+}
+
+.option-radio {
+    margin-left: auto;
+    font-size: 25px;
+    color: #d6336c;
+}
+
+.continue-checkout-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+
+    .verification-options {
+        grid-template-columns: 1fr;
+    }
+
+    .verification-page {
+        padding: 25px;
+    }
+}
+/* =====================================
+   APPOINTMENT CELEBRATION
+   ===================================== */
+
+.celebration {
+    position: relative;
+    height: 70px;
+    margin-bottom: 5px;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 9px;
+    height: 18px;
+    border-radius: 3px;
+    animation: confettiFall 2.5s ease-out forwards;
+    opacity: 0;
+}
+
+.confetti:nth-child(1) {
+    left: 15%;
+    transform: rotate(20deg);
+    background: #d6336c;
+    animation-delay: 0.1s;
+}
+
+.confetti:nth-child(2) {
+    left: 28%;
+    transform: rotate(-25deg);
+    background: #7c3aed;
+    animation-delay: 0.25s;
+}
+
+.confetti:nth-child(3) {
+    left: 42%;
+    transform: rotate(15deg);
+    background: #f59e0b;
+    animation-delay: 0.05s;
+}
+
+.confetti:nth-child(4) {
+    left: 58%;
+    transform: rotate(-20deg);
+    background: #2563eb;
+    animation-delay: 0.2s;
+}
+
+.confetti:nth-child(5) {
+    left: 72%;
+    transform: rotate(30deg);
+    background: #d6336c;
+    animation-delay: 0.35s;
+}
+
+.confetti:nth-child(6) {
+    left: 85%;
+    transform: rotate(-15deg);
+    background: #7c3aed;
+    animation-delay: 0.15s;
+}
+
+@keyframes confettiFall {
+    0% {
+        top: 0;
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        top: 65px;
+        opacity: 0;
+        transform: translateY(20px) rotate(180deg);
+    }
+}
+/* Celebration animation */
+.celebration {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 0;
+    overflow: visible;
+}
+
+.confetti {
+    position: absolute;
+    width: 9px;
+    height: 18px;
+    border-radius: 2px;
+    opacity: 0;
+    animation: confettiBurst 2.2s ease-out forwards;
+}
+
+.c1 {
+    left: 25%;
+    top: 45px;
+    background: #d6336c;
+    transform: rotate(20deg);
+    animation-delay: 0.1s;
+}
+
+.c2 {
+    left: 32%;
+    top: 35px;
+    width: 8px;
+    height: 13px;
+    background: #7c3aed;
+    transform: rotate(-25deg);
+    animation-delay: 0.2s;
+}
+
+.c3 {
+    left: 40%;
+    top: 50px;
+    background: #f59e0b;
+    transform: rotate(35deg);
+    animation-delay: 0.05s;
+}
+
+.c4 {
+    left: 48%;
+    top: 30px;
+    width: 10px;
+    height: 16px;
+    background: #2563eb;
+    transform: rotate(-35deg);
+    animation-delay: 0.15s;
+}
+
+.c5 {
+    left: 55%;
+    top: 45px;
+    background: #d6336c;
+    transform: rotate(25deg);
+    animation-delay: 0.3s;
+}
+
+.c6 {
+    left: 63%;
+    top: 35px;
+    background: #7c3aed;
+    transform: rotate(-20deg);
+    animation-delay: 0.1s;
+}
+
+.c7 {
+    left: 70%;
+    top: 50px;
+    background: #f59e0b;
+    transform: rotate(30deg);
+    animation-delay: 0.25s;
+}
+
+.c8 {
+    left: 20%;
+    top: 55px;
+    width: 7px;
+    height: 14px;
+    background: #2563eb;
+    transform: rotate(-30deg);
+    animation-delay: 0.18s;
+}
+
+.c9 {
+    left: 77%;
+    top: 45px;
+    background: #d6336c;
+    transform: rotate(15deg);
+    animation-delay: 0.05s;
+}
+
+.c10 {
+    left: 45%;
+    top: 55px;
+    width: 7px;
+    height: 14px;
+    background: #7c3aed;
+    transform: rotate(-15deg);
+    animation-delay: 0.22s;
+}
+
+@keyframes confettiBurst {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(45px) rotate(180deg);
+    }
+}
+
+
+/* Integration polish for Buy Section & Appointment Celebration */
+.buy-phone-section {
+  padding: 10px 0 60px;
+}
+.buy-section .section-heading {
+  text-align: left;
+  margin-bottom: 24px;
+}
+.buy-section .section-heading span {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  background: var(--primary-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.buy-section .section-heading h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--text-title);
+  margin-bottom: 6px;
+}
+.buy-section .section-heading p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+.phone-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+.appointment-confirmed .celebration {
+  position: relative;
+  height: 60px;
+}
+
+</style>
+
 <style>.signin-wrapper{max-width:1040px}.signin-shell{display:grid;grid-template-columns:1fr 1fr;min-height:560px}.signin-card{border:none;border-radius:0;box-shadow:none}.signin-visual{min-height:560px}@media(max-width:820px){.signin-shell{grid-template-columns:1fr}.signin-visual{min-height:320px;order:-1}}
 @media(max-width:700px){
   .signin-template-grid{
@@ -2768,8 +4591,7 @@ footer p{color:#d5b4c4;font-size:13px;margin:4px 0}
 }
 
 /* Pink sign-in mobile refinement */
-</style></head>
-<body>
+</style></head><body>
 
 <!-- SVG Gradients Definition -->
 <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
@@ -3619,23 +5441,83 @@ footer p{color:#d5b4c4;font-size:13px;margin:4px 0}
       </button>
     </div>
 
-    <div class="section-header" style="text-align:left;margin-bottom:24px">
-      <span class="eyebrow">BROWSE SMARTPHONES</span>
-      <h2>Explore Latest Flagship Devices</h2>
-      <p>Filter by brand, view full specifications, buy directly, or apply your trade-in balance.</p>
-    </div>
+    <!-- Sania's Buy Phone Section with Search, Sort, Brand Buttons, Price Range & Phone Cards -->
+    <div id="buySection" class="buy-section buy-phone-section">
+      <div class="buy-container">
+        <div class="section-heading">
+          <span>BUY A PHONE</span>
+          <h2>Find Your Perfect Phone</h2>
+          <p>Search and filter phones by name, brand, price and storage.</p>
+        </div>
 
-    <!-- Brand Filter Pills -->
-    <div class="filter-tabs-row" id="catalogueFilters">
-      <!-- Populated via JS -->
-    </div>
+        <div class="buy-filter-layout">
+          <!-- LEFT SIDE: SEARCH & SORT -->
+          <div class="buy-filter-left">
+            <input
+              type="text"
+              id="phoneSearch"
+              placeholder="Search phone..."
+              oninput="filterPhones()"
+            >
+            <select id="sortFilter" onchange="filterPhones()">
+              <option value="">Sort - Popular</option>
+              <option value="low">Price: Low to High</option>
+              <option value="high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
 
-    <!-- Catalogue Cards Grid -->
-    <div class="cards-grid" id="catalogueGrid">
-      <!-- Populated via JS -->
+          <!-- RIGHT SIDE: BRAND FILTERS -->
+          <div class="brand-buttons">
+            <button class="brand-btn active" onclick="document.getElementById('brandFilter').value=''; filterPhones();">All</button>
+            <button class="brand-btn" onclick="document.getElementById('brandFilter').value='Apple'; filterPhones();">Apple</button>
+            <button class="brand-btn" onclick="document.getElementById('brandFilter').value='Samsung'; filterPhones();">Samsung</button>
+            <button class="brand-btn" onclick="document.getElementById('brandFilter').value='OnePlus'; filterPhones();">OnePlus</button>
+            <button class="brand-btn" onclick="document.getElementById('brandFilter').value='Xiaomi'; filterPhones();">Xiaomi</button>
+            <button class="brand-btn" onclick="document.getElementById('brandFilter').value='Realme'; filterPhones();">Realme</button>
+            <button class="brand-btn" onclick="document.getElementById('brandFilter').value='Vivo'; filterPhones();">Vivo</button>
+            <button class="brand-btn" onclick="document.getElementById('brandFilter').value='OPPO'; filterPhones();">OPPO</button>
+          </div>
+        </div>
+
+        <!-- Hidden select for brand & storage filters -->
+        <select id="brandFilter" style="display:none;">
+          <option value="">All Brands</option>
+          <option value="Apple">Apple</option>
+          <option value="Samsung">Samsung</option>
+          <option value="OnePlus">OnePlus</option>
+          <option value="Xiaomi">Xiaomi</option>
+          <option value="Realme">Realme</option>
+          <option value="Vivo">Vivo</option>
+          <option value="OPPO">OPPO</option>
+        </select>
+
+        <select id="storageFilter" style="display:none;">
+          <option value="">All Storage</option>
+          <option value="128">128 GB</option>
+          <option value="256">256 GB</option>
+          <option value="512">512 GB</option>
+        </select>
+
+        <!-- PRICE RANGE FILTER -->
+        <div class="price-range-filter">
+          <div class="price-slider-row">
+            <span class="min-price-label">₹29,999</span>
+            <div class="price-slider">
+              <input type="range" id="minPrice" min="29999" max="109999" value="29999" step="1000" style="display:none;">
+              <input type="range" id="maxPrice" min="29999" max="109999" value="109999" step="1000" oninput="filterPhones()">
+            </div>
+            <strong id="priceRangeValue">₹1,09,999</strong>
+          </div>
+        </div>
+
+        <!-- Phone Cards Grid -->
+        <div id="phoneCards" class="phone-cards"></div>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- ================= 8. PHONE DETAILS VIEW ================= -->
 <section id="detailsPage" class="view-container">
@@ -3747,6 +5629,120 @@ footer p{color:#d5b4c4;font-size:13px;margin:4px 0}
 
 <!-- ================= JAVASCRIPT LOGIC ================= -->
 <script>
+const buyPhones = [
+    {
+        name: "iPhone 15",
+        brand: "Apple",
+        storage: 128,
+        price: 69999,
+        rating: 4.7,
+        image: "images/iphone15.jpg"
+    },
+    {
+        name: "iPhone 15 Pro",
+        brand: "Apple",
+        storage: 256,
+        price: 109999,
+        rating: 4.8,
+        image: "images/iphone15pro.jpg"
+    },
+    {
+        name: "Galaxy S24",
+        brand: "Samsung",
+        storage: 256,
+        price: 74999,
+        rating: 4.6,
+        image: "images/galaxy-s24.jpg"
+    },
+    {
+        name: "Galaxy A55",
+        brand: "Samsung",
+        storage: 128,
+        price: 39999,
+        rating: 4.5,
+        image: "images/galaxy-a55.jpg"
+    },
+    {
+        name: "OnePlus 12",
+        brand: "OnePlus",
+        storage: 256,
+        price: 64999,
+        rating: 4.7,
+        image: "images/oneplus12.jpg"
+    },
+    {
+        name: "OnePlus Nord 4",
+        brand: "OnePlus",
+        storage: 128,
+        price: 29999,
+        rating: 4.5,
+        image: "images/oneplus-nord4.jpg"
+    },
+    {
+        name: "Xiaomi 14",
+        brand: "Xiaomi",
+        storage: 512,
+        price: 69999,
+        rating: 4.6,
+        image: "images/xiaomi14.jpg"
+    },
+    {
+        name: "Redmi Note 13 Pro",
+        brand: "Xiaomi",
+        storage: 256,
+        price: 29999,
+        rating: 4.4,
+        image: "images/redmi-note-13-pro.jpg"
+    },
+    {
+        name: "Realme GT 6",
+        brand: "Realme",
+        storage: 256,
+        price: 44999,
+        rating: 4.5,
+        image: "images/realme-gt6.jpg"
+    },
+    {
+        name: "Vivo V30",
+        brand: "Vivo",
+        storage: 256,
+        price: 33999,
+        rating: 4.4,
+        image: "images/vivo-v30.jpg"
+    },
+    {
+        name: "OPPO Reno 12",
+        brand: "OPPO",
+        storage: 256,
+        price: 32999,
+        rating: 4.3,
+        image: "images/oppo-reno12.jpg"
+    }
+];
+
+const sellBasePricesFinal = {
+    "iPhone 15": 52000,
+    "iPhone 14": 42000,
+    "iPhone 13": 34000,
+    "iPhone 12": 26000,
+    "Galaxy S24": 42000,
+    "Galaxy S23": 34000,
+    "Galaxy S22": 26000,
+    "Galaxy A55": 18000,
+    "OnePlus 12": 36000,
+    "OnePlus 11": 28000,
+    "OnePlus 10 Pro": 22000,
+    "Xiaomi 14": 30000,
+    "Redmi Note 13 Pro": 17000,
+    "Realme 12 Pro+": 19000,
+    "Realme GT 6": 25000,
+    "Vivo V30": 22000,
+    "Vivo X100": 42000,
+    "OPPO Reno 11": 20000,
+    "OPPO Find X7": 38000
+};
+
+
 /* ================= GLOBAL DATABASE & STATE ================= */
 const fallbackImage = "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=85";
 function handleImageFallback(img){
@@ -3758,91 +5754,135 @@ function handleImageFallback(img){
 const CATALOGUE_PHONES = [
   {
     id: 1,
+    name: "iPhone 15 Pro",
     brand: "Apple",
     model: "iPhone 15 Pro",
     series: "iPhone 15 Series",
-    image: "https://images.unsplash.com/photo-1696446701796-da61225697cc?auto=format&fit=crop&w=700&q=85",
+    image: "images/iphone15pro.jpg",
     storage: ["128GB", "256GB", "512GB", "1TB"],
-    price: 119900,
+    price: 109999,
     specs: ["A17 Pro 3nm Chip", "48MP Pro Camera System", "Grade 5 Titanium Body", "USB-C 3.0", "Action Button"],
-    rating: "4.9 ★"
+    rating: "4.8 ★"
   },
   {
     id: 2,
+    name: "iPhone 15",
     brand: "Apple",
     model: "iPhone 15",
     series: "iPhone 15 Series",
-    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=700&q=85",
+    image: "images/iphone15.jpg",
     storage: ["128GB", "256GB", "512GB"],
-    price: 71900,
+    price: 69999,
     specs: ["Dynamic Island Display", "A16 Bionic Processor", "48MP Main Camera", "Color-Infused Glass"],
-    rating: "4.8 ★"
+    rating: "4.7 ★"
   },
   {
     id: 3,
-    brand: "Samsung",
-    model: "Galaxy S24 Ultra",
-    series: "Galaxy S Series",
-    image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=700&q=85",
-    storage: ["256GB", "512GB", "1TB"],
-    price: 129999,
-    specs: ["Snapdragon 8 Gen 3 for Galaxy", "200MP Quad Tele System", "Galaxy AI Suite Built-in", "Embedded S-Pen"],
-    rating: "4.9 ★"
-  },
-  {
-    id: 4,
+    name: "Galaxy S24",
     brand: "Samsung",
     model: "Galaxy S24",
     series: "Galaxy S Series",
-    image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85",
+    image: "images/galaxy-s24.jpg",
     storage: ["128GB", "256GB"],
     price: 74999,
     specs: ["6.2-inch Dynamic AMOLED 2X", "Galaxy AI Photo Assist", "50MP Triple Camera", "Armor Aluminum 2.0"],
-    rating: "4.7 ★"
+    rating: "4.6 ★"
+  },
+  {
+    id: 4,
+    name: "Galaxy A55",
+    brand: "Samsung",
+    model: "Galaxy A55",
+    series: "Galaxy A Series",
+    image: "images/galaxy-a55.jpg",
+    storage: ["128GB", "256GB"],
+    price: 39999,
+    specs: ["Super AMOLED 120Hz", "Exynos 1480 Processor", "50MP OIS Camera", "Metal Frame Design"],
+    rating: "4.5 ★"
   },
   {
     id: 5,
-    brand: "Google",
-    model: "Pixel 8 Pro",
-    series: "Pixel 8 Series",
-    image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85",
-    storage: ["128GB", "256GB", "512GB"],
-    price: 84999,
-    specs: ["Google Tensor G3 Chip", "Best Take & Magic Editor", "Super Actua 120Hz Display", "Thermometer Sensor"],
-    rating: "4.8 ★"
-  },
-  {
-    id: 6,
+    name: "OnePlus 12",
     brand: "OnePlus",
     model: "OnePlus 12",
     series: "OnePlus Series",
-    image: "https://images.unsplash.com/photo-1592286927505-2fd0b1b0b0f1?auto=format&fit=crop&w=700&q=85",
+    image: "images/oneplus12.jpg",
     storage: ["256GB", "512GB"],
     price: 64999,
     specs: ["Snapdragon 8 Gen 3", "4th Gen Hasselblad Camera", "100W SUPERVOOC Charging", "5400mAh Battery"],
-    rating: "4.8 ★"
-  },
-  {
-    id: 7,
-    brand: "Xiaomi",
-    model: "Xiaomi 14 Ultra",
-    series: "Xiaomi Flagship",
-    image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=700&q=85",
-    storage: ["512GB"],
-    price: 99999,
-    specs: ["Leica Quad 50MP Cameras", "1-inch LYT-900 Sensor", "WQHD+ AMOLED Display", "Snapdragon 8 Gen 3"],
     rating: "4.7 ★"
   },
   {
+    id: 6,
+    name: "OnePlus Nord 4",
+    brand: "OnePlus",
+    model: "OnePlus Nord 4",
+    series: "Nord Series",
+    image: "images/oneplus-nord4.jpg",
+    storage: ["128GB", "256GB"],
+    price: 29999,
+    specs: ["All-Metal Unibody", "Snapdragon 7+ Gen 3", "5500mAh Battery", "100W Fast Charge"],
+    rating: "4.5 ★"
+  },
+  {
+    id: 7,
+    name: "Xiaomi 14",
+    brand: "Xiaomi",
+    model: "Xiaomi 14",
+    series: "Xiaomi Flagship",
+    image: "images/xiaomi14.jpg",
+    storage: ["512GB"],
+    price: 69999,
+    specs: ["Leica Summilux Optical Lens", "Snapdragon 8 Gen 3", "1.5K 120Hz LTPO AMOLED", "90W HyperCharge"],
+    rating: "4.6 ★"
+  },
+  {
     id: 8,
+    name: "Redmi Note 13 Pro",
+    brand: "Xiaomi",
+    model: "Redmi Note 13 Pro",
+    series: "Redmi Series",
+    image: "images/redmi-note-13-pro.jpg",
+    storage: ["256GB"],
+    price: 29999,
+    specs: ["200MP OIS Camera", "1.5K 120Hz AMOLED", "Snapdragon 7s Gen 2", "67W Turbo Charge"],
+    rating: "4.4 ★"
+  },
+  {
+    id: 9,
+    name: "Realme GT 6",
+    brand: "Realme",
+    model: "Realme GT 6",
+    series: "GT Series",
+    image: "images/realme-gt6.jpg",
+    storage: ["256GB"],
+    price: 44999,
+    specs: ["Snapdragon 8s Gen 3", "6000 nits Ultra Bright Display", "50MP Sony LYT-808 OIS", "120W Charge"],
+    rating: "4.5 ★"
+  },
+  {
+    id: 10,
+    name: "Vivo V30",
     brand: "Vivo",
-    model: "Vivo X100 Pro",
-    series: "Vivo X Series",
-    image: "https://images.unsplash.com/photo-1603891128711-11b4b8db2b26?auto=format&fit=crop&w=700&q=85",
-    storage: ["256GB", "512GB"],
-    price: 89999,
-    specs: ["ZEISS APO Telephoto Camera", "MediaTek Dimensity 9300", "5400mAh BlueVolt Battery", "V3 Imaging Chip"],
-    rating: "4.8 ★"
+    model: "Vivo V30",
+    series: "V Series",
+    image: "images/vivo-v30.jpg",
+    storage: ["256GB"],
+    price: 33999,
+    specs: ["Studio Quality Aura Light", "50MP AF Group Selfie", "Snapdragon 7 Gen 3", "80W FlashCharge"],
+    rating: "4.4 ★"
+  },
+  {
+    id: 11,
+    name: "OPPO Reno 12",
+    brand: "OPPO",
+    model: "OPPO Reno 12",
+    series: "Reno Series",
+    image: "images/oppo-reno12.jpg",
+    storage: ["256GB"],
+    price: 32999,
+    specs: ["AI Studio Portrait Camera", "Dimensity 7300-Energy", "Splash Touch Display", "80W SUPERVOOC"],
+    rating: "4.3 ★"
   }
 ];
 
@@ -4791,23 +6831,26 @@ function renderHomeFeatured() {
   const grid = document.getElementById('homeFeaturedGrid');
   if (!grid) return;
   grid.innerHTML = '';
-  CATALOGUE_PHONES.slice(0, 4).forEach(phone => {
+  buyPhones.slice(0, 4).forEach(phone => {
+    const hasCredit = appState.imeiVerified && appState.predictedPrice > 0;
+    const upgradeCost = Math.max(1, phone.price - (hasCredit ? appState.predictedPrice : 0));
     grid.innerHTML += `
       <article class="phone-card">
         <div class="phone-card-media">
-          <span class="eyebrow" style="position:absolute;top:12px;left:12px">${phone.rating}</span>
-          <img src="${phone.image}" alt="${phone.model}" loading="lazy" onerror="handleImageFallback(this)">
+          <span class="eyebrow" style="position:absolute;top:12px;left:12px">⭐ ${phone.rating}</span>
+          <img src="${phone.image}" alt="${phone.name}" loading="lazy" onerror="handleImageFallback(this)">
         </div>
         <div class="phone-card-body">
           <span style="font-size:11px;font-weight:900;color:var(--primary);text-transform:uppercase">${phone.brand}</span>
-          <h3>${phone.model}</h3>
-          <div class="specs">${phone.specs[0]} • ${phone.specs[1]}</div>
+          <h3>${phone.name}</h3>
+          <div class="specs">${phone.storage} GB Storage • Verified Grade A+</div>
           <div class="price-row">
             <div class="price">₹${phone.price.toLocaleString('en-IN')}</div>
+            ${hasCredit ? `<span style="font-size:11.5px;color:var(--success);font-weight:800">Net: ₹${upgradeCost.toLocaleString('en-IN')}</span>` : ''}
           </div>
           <div class="actions">
-            <button class="outline-btn" onclick="viewPhoneDetails(${phone.id})">View Specs</button>
-            <button class="primary-btn" onclick="startBuyCheckout(${phone.id})">Buy / Upgrade</button>
+            <button class="outline-btn" onclick="showPhoneDetails('${phone.name}'); navigateTo('cataloguePage');">View Specs</button>
+            <button class="primary-btn" onclick="buyPhone('${phone.name}')">Buy / Upgrade</button>
           </div>
         </div>
       </article>
@@ -4961,10 +7004,1189 @@ window.addEventListener('DOMContentLoaded', () => {
   initCatalogue();
   renderHomeFeatured();
   updateQuickValuation();
+  if (typeof displayPhones === 'function') displayPhones(buyPhones);
 });
+
+
+function showExchange(newPhoneName) {
+    const newPhone = buyPhones.find(p => p.name === newPhoneName);
+
+    if (!newPhone) return;
+
+    const phoneCards = document.getElementById("phoneCards");
+
+    phoneCards.innerHTML = `
+        <div class="exchange-page">
+
+            <button
+                class="back-btn"
+                onclick="showPhoneDetails('${newPhone.name}')">
+                ← Back to Phone Details
+            </button>
+
+            <div class="exchange-container">
+
+                <h2>Exchange Your Old Phone</h2>
+
+                <div class="exchange-new-phone">
+                    <img src="${newPhone.image}" alt="${newPhone.name}">
+
+                    <div>
+                        <h3>${newPhone.name}</h3>
+                        <p>New Phone Price:</p>
+                        <strong>
+                            ₹${newPhone.price.toLocaleString("en-IN")}
+                        </strong>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h3>Select Your Old Phone</h3>
+
+                <label>Phone Model</label>
+
+                <select id="exchangeModel">
+                    <option value="">Select phone model</option>
+                    ${Object.keys(sellBasePricesFinal).map(model => `
+                        <option value="${model}">
+                            ${model}
+                        </option>
+                    `).join("")}
+                </select>
+
+                <label>Storage</label>
+
+                <select id="exchangeStorage">
+                    <option value="">Select storage</option>
+                    <option value="128GB">128GB</option>
+                    <option value="256GB">256GB</option>
+                    <option value="512GB">512GB</option>
+                </select>
+
+                <label>Condition</label>
+
+                <select id="exchangeCondition">
+                    <option value="">Select condition</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="good">Good</option>
+                    <option value="fair">Fair</option>
+                    <option value="poor">Poor</option>
+                </select>
+
+                <button
+                    class="calculate-exchange-btn"
+                    onclick="calculateExchange('${newPhone.name}')">
+                    Calculate Exchange Value
+                </button>
+
+                <div
+                    id="exchangeResult"
+                    class="exchange-result"
+                    style="display:none;">
+                </div>
+
+            </div>
+        </div>
+    `;
+}
+
+
+function calculateExchange(newPhoneName) {
+
+    const model = document.getElementById("exchangeModel").value;
+    const storage = document.getElementById("exchangeStorage").value;
+    const condition = document.getElementById("exchangeCondition").value;
+    const result = document.getElementById("exchangeResult");
+
+    if (!model || !storage || !condition) {
+        alert("Please select all old phone details.");
+        return;
+    }
+
+    let exchangeValue = sellBasePricesFinal[model] || 15000;
+
+    if (storage === "256GB") exchangeValue += 3000;
+    if (storage === "512GB") exchangeValue += 6000;
+
+    const conditionFactor = {
+        excellent: 1,
+        good: 0.85,
+        fair: 0.70,
+        poor: 0.50
+    };
+
+    exchangeValue *= conditionFactor[condition];
+
+    exchangeValue = Math.round(exchangeValue / 100) * 100;
+
+    const newPhone = buyPhones.find(
+        p => p.name === newPhoneName
+    );
+
+    const finalPrice = newPhone.price - exchangeValue;
+
+    result.innerHTML = `
+        <h3>Exchange Estimate</h3>
+
+        <p>
+            Old Phone Exchange Value:
+            <strong>
+                -₹${exchangeValue.toLocaleString("en-IN")}
+            </strong>
+        </p>
+
+        <p>
+            New Phone Price:
+            <strong>
+                ₹${newPhone.price.toLocaleString("en-IN")}
+            </strong>
+        </p>
+
+        <hr>
+
+        <h2>
+            Final Price:
+            ₹${Math.max(finalPrice, 0).toLocaleString("en-IN")}
+        </h2>
+
+        <button
+            class="buy-now-btn"
+            onclick="buyPhone('${newPhone.name}')">
+            Apply Exchange & Buy
+        </button>
+    `;
+
+    result.style.display = "block";
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+}
+
+
+function displayPhones(phones) {
+    const phoneCards = document.getElementById("phoneCards");
+
+    if (!phoneCards) return;
+
+    if (phones.length === 0) {
+        phoneCards.innerHTML =
+            '<p class="no-phones">No phones found.</p>';
+        return;
+    }
+
+    const hasCredit = appState && appState.imeiVerified && appState.predictedPrice > 0;
+
+    phoneCards.innerHTML = phones.map(phone => {
+        const netUpgrade = Math.max(1, phone.price - (hasCredit ? appState.predictedPrice : 0));
+        return `
+        <div class="phone-card">
+
+            <img
+                src="${phone.image}"
+                alt="${phone.name}"
+                class="phone-image"
+            >
+
+            <h3>${phone.name}</h3>
+
+            <p>
+                <strong>Brand:</strong> ${phone.brand}
+            </p>
+
+            <p>
+                <strong>Storage:</strong> ${phone.storage} GB
+            </p>
+
+            <p class="phone-price">
+                ₹${phone.price.toLocaleString("en-IN")}
+            </p>
+
+            ${hasCredit ? `
+            <p style="font-size:12px;color:var(--success);font-weight:700;margin:-6px 0 6px">
+                Trade-in Credit: -₹${appState.predictedPrice.toLocaleString("en-IN")}
+            </p>
+            <p style="font-size:14px;color:var(--primary);font-weight:900;margin-bottom:8px">
+                Net Payable: ₹${netUpgrade.toLocaleString("en-IN")}
+            </p>
+            ` : ''}
+
+            <p class="phone-rating">
+                ⭐ ${phone.rating} / 5
+            </p>
+
+            <div class="phone-actions">
+
+                <button
+                    class="details-btn"
+                    onclick="showPhoneDetails('${phone.name}')">
+                    View Details
+                </button>
+
+                <button
+                    class="buy-now-btn"
+                    onclick="buyPhone('${phone.name}')">
+                    Buy Now
+                </button>
+
+                <button
+                    class="exchange-btn"
+                    onclick="showExchange('${phone.name}')">
+                    Exchange
+                </button>
+
+            </div>
+
+        </div>
+    `;
+    }).join("");
+}
+function filterPhones() {
+    const search =
+        document.getElementById("phoneSearch").value.toLowerCase();
+
+    const brand =
+        document.getElementById("brandFilter").value;
+
+    const minPrice =
+        Number(document.getElementById("minPrice").value);
+
+    const maxPrice =
+        Number(document.getElementById("maxPrice").value);
+
+    const storage =
+        document.getElementById("storageFilter").value;
+
+    const sort =
+        document.getElementById("sortFilter").value;
+
+    if (minPrice > maxPrice) {
+        return;
+    }
+
+   document.getElementById("priceRangeValue").textContent =
+    `₹${maxPrice.toLocaleString("en-IN")}`;
+
+    let filteredPhones = buyPhones.filter(phone => {
+
+        const matchesSearch =
+            phone.name.toLowerCase().includes(search);
+
+        const matchesBrand =
+            brand === "" || phone.brand === brand;
+
+        const matchesStorage =
+            storage === "" ||
+            phone.storage === Number(storage);
+
+        const matchesPrice =
+            phone.price >= minPrice &&
+            phone.price <= maxPrice;
+
+        return (
+            matchesSearch &&
+            matchesBrand &&
+            matchesStorage &&
+            matchesPrice
+        );
+    });
+
+    if (sort === "low") {
+        filteredPhones.sort((a, b) => a.price - b.price);
+    } else if (sort === "high") {
+        filteredPhones.sort((a, b) => b.price - a.price);
+    } else if (sort === "name") {
+        filteredPhones.sort((a, b) =>
+            a.name.localeCompare(b.name)
+        );
+    }
+
+    displayPhones(filteredPhones);
+}
+function showPhoneDetails(phoneName) {
+    const phone = buyPhones.find(p => p.name === phoneName);
+
+    if (!phone) return;
+
+    const phoneCards = document.getElementById("phoneCards");
+
+    phoneCards.innerHTML = `
+        <div class="phone-details-page">
+
+            <button
+                class="back-btn"
+                onclick="displayPhones(buyPhones)">
+                ← Back to Phones
+            </button>
+
+            <div class="phone-details-container">
+
+                <div class="phone-details-image">
+                    <img
+                        src="${phone.image}"
+                        alt="${phone.name}"
+                    >
+                </div>
+
+                <div class="phone-details-info">
+
+                    <h2>${phone.name}</h2>
+
+                    <p class="phone-rating">
+                        ⭐ ${phone.rating} / 5
+                    </p>
+
+                    <p>
+                        <strong>Brand:</strong>
+                        ${phone.brand}
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        ${phone.storage} GB
+                    </p>
+
+                    <h3 class="details-price">
+                        ₹${phone.price.toLocaleString("en-IN")}
+                    </h3>
+
+                    <hr>
+
+                    <h3>Specifications</h3>
+
+                    <div class="specifications">
+
+                        <p>
+                            <strong>Brand:</strong>
+                            ${phone.brand}
+                        </p>
+
+                        <p>
+                            <strong>Storage:</strong>
+                            ${phone.storage} GB
+                        </p>
+
+                        <p>
+                            <strong>Rating:</strong>
+                            ⭐ ${phone.rating} / 5
+                        </p>
+
+                        <p>
+                            <strong>Availability:</strong>
+                            In Stock
+                        </p>
+
+                    </div>
+
+                    <div class="details-actions">
+
+                        <button
+                            class="buy-now-btn"
+                            onclick="buyPhone('${phone.name}')">
+                            Buy Now
+                        </button>
+
+                        <button
+                            class="exchange-btn"
+                            onclick="showExchange('${phone.name}')">
+                            Exchange
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    `;
+}function buyPhone(phoneName) {
+    const phone = buyPhones.find(p => p.name === phoneName);
+
+    if (!phone) return;
+
+    let purchasePage = document.getElementById("purchasePage");
+
+    if (purchasePage) {
+        purchasePage.remove();
+    }
+
+    purchasePage = document.createElement("section");
+    purchasePage.id = "purchasePage";
+    purchasePage.className = "purchase-page";
+
+    purchasePage.innerHTML = `
+        <div class="purchase-container">
+
+            <button class="back-buy-btn" onclick="closePurchasePage()">
+                ← Back to Phones
+            </button>
+
+            <!-- Progress Line -->
+            <div class="checkout-progress">
+                <div class="progress-step active">
+                    <span>1</span>
+                    <p>Phone Details</p>
+                </div>
+
+                <div class="progress-line"></div>
+
+                <div class="progress-step">
+                    <span>2</span>
+                    <p>Checkout</p>
+                </div>
+
+                <div class="progress-line"></div>
+
+                <div class="progress-step">
+                    <span>3</span>
+                    <p>Appointment</p>
+                </div>
+            </div>
+
+            <div class="purchase-card">
+
+                <!-- Phone Image -->
+                <div class="purchase-image">
+                    <img
+                        src="${phone.image}"
+                        alt="${phone.name}"
+                    >
+                </div>
+
+                <!-- Phone Details -->
+                <div class="purchase-details">
+
+                    <span class="purchase-tag">
+                        PURCHASE PHONE
+                    </span>
+
+                    <h2>${phone.name}</h2>
+
+                    <div class="phone-rating">
+                        ⭐ ${phone.rating || "4.5"} / 5
+                    </div>
+
+                    <p>
+                        <strong>Brand:</strong>
+                        ${phone.brand}
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        ${phone.storage} GB
+                    </p>
+
+                    <div class="purchase-price-box">
+
+                        <div>
+                            <p>Listed Price</p>
+                            <h3>
+                                ₹${phone.price.toLocaleString("en-IN")}
+                            </h3>
+                        </div>
+
+                        <div>
+                            <p>Predicted Price</p>
+                            <h3 class="predicted-price">
+                                ₹${Math.round(
+                                    phone.price * 0.95
+                                ).toLocaleString("en-IN")}
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <div class="phone-highlights">
+
+                        <div>
+                            ✓ Genuine Product
+                        </div>
+
+                        <div>
+                            ✓ Quality Verified
+                        </div>
+
+                        <div>
+                            ✓ Secure Purchase
+                        </div>
+
+                        <div>
+                            ✓ Doorstep Verification Available
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="proceed-checkout-btn"
+                        onclick="proceedToCheckout('${phone.name}')"
+                    >
+                        Proceed to Checkout →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(purchasePage);
+
+    purchasePage.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+function proceedToCheckout(phoneName) {
+
+    const phone = buyPhones.find(p => p.name === phoneName);
+
+    if (!phone) return;
+
+    const purchasePage = document.getElementById("purchasePage");
+
+    if (!purchasePage) return;
+
+    purchasePage.innerHTML = `
+        <div class="purchase-container">
+
+            <button class="back-buy-btn"
+                onclick="buyPhone('${phone.name}')">
+                ← Back to Phone Details
+            </button>
+
+            <!-- Progress Line -->
+            <div class="checkout-progress">
+
+                <div class="progress-step completed">
+                    <span>✓</span>
+                    <p>Phone Details</p>
+                </div>
+
+                <div class="progress-line completed-line"></div>
+
+                <div class="progress-step active">
+                    <span>2</span>
+                    <p>Checkout</p>
+                </div>
+
+                <div class="progress-line"></div>
+
+                <div class="progress-step">
+                    <span>3</span>
+                    <p>Appointment</p>
+                </div>
+
+            </div>
+
+            <div class="checkout-page">
+
+                <div class="checkout-left">
+
+                    <h2>Checkout</h2>
+
+                    <div class="checkout-phone">
+
+                        <img
+                            src="${phone.image}"
+                            alt="${phone.name}"
+                        >
+
+                        <div>
+                            <h3>${phone.name}</h3>
+                            <p>${phone.brand}</p>
+                            <p>${phone.storage} GB Storage</p>
+                        </div>
+
+                    </div>
+
+                    <div class="coupon-box">
+
+                        <h3>Have a Coupon?</h3>
+
+                        <div class="coupon-input">
+
+                            <input
+                                type="text"
+                                id="couponCode"
+                                placeholder="Enter coupon code"
+                            >
+
+                            <button onclick="applyCoupon('${phone.name}')">
+                                Apply
+                            </button>
+
+                        </div>
+
+                        <p id="couponMessage"></p>
+
+                    </div>
+
+                </div>
+
+                <div class="checkout-right">
+
+                    <h2>Price Details</h2>
+
+                    <div class="price-row">
+                        <span>Phone Price</span>
+                        <span>
+                            ₹${phone.price.toLocaleString("en-IN")}
+                        </span>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Delivery</span>
+                        <span>FREE</span>
+                    </div>
+
+                    <div class="price-row discount-row">
+                        <span>Discount</span>
+                        <span id="discountAmount">₹0</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="price-total">
+                        <span>Total</span>
+                        <span id="totalAmount">
+                            ₹${phone.price.toLocaleString("en-IN")}
+                        </span>
+                    </div>
+
+                    <button
+                        class="continue-checkout-btn"
+                        onclick="showVerificationOptions('${phone.name}')"
+                    >
+                        Continue →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+    purchasePage.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+function applyCoupon(phoneName) {
+
+    const phone = buyPhones.find(p => p.name === phoneName);
+
+    if (!phone) return;
+
+    const coupon = document.getElementById("couponCode").value
+        .trim()
+        .toUpperCase();
+
+    const message = document.getElementById("couponMessage");
+    const discountAmount = document.getElementById("discountAmount");
+    const totalAmount = document.getElementById("totalAmount");
+
+    if (coupon === "SAVE10") {
+
+        const discount = Math.round(phone.price * 0.10);
+        const total = phone.price - discount;
+
+        discountAmount.textContent =
+            "-₹" + discount.toLocaleString("en-IN");
+
+        totalAmount.textContent =
+            "₹" + total.toLocaleString("en-IN");
+
+        message.textContent =
+            "✓ Coupon applied successfully! 10% discount.";
+
+        message.className = "coupon-success";
+
+    } else {
+
+        message.textContent =
+            "Invalid coupon. Try SAVE10.";
+
+        message.className = "coupon-error";
+    }
+}
+function showVerificationOptions(phoneName) {
+
+    const phone = buyPhones.find(p => p.name === phoneName);
+
+    if (!phone) return;
+
+    const purchasePage = document.getElementById("purchasePage");
+
+    if (!purchasePage) return;
+
+    purchasePage.innerHTML = `
+        <div class="purchase-container">
+
+            <button class="back-buy-btn"
+                onclick="proceedToCheckout('${phone.name}')">
+                ← Back to Checkout
+            </button>
+
+            <!-- Progress Line -->
+            <div class="checkout-progress">
+
+                <div class="progress-step completed">
+                    <span>✓</span>
+                    <p>Phone Details</p>
+                </div>
+
+                <div class="progress-line completed-line"></div>
+
+                <div class="progress-step completed">
+                    <span>✓</span>
+                    <p>Checkout</p>
+                </div>
+
+                <div class="progress-line completed-line"></div>
+
+                <div class="progress-step active">
+                    <span>3</span>
+                    <p>Appointment</p>
+                </div>
+
+            </div>
+
+            <div class="verification-page">
+
+                <h2>Choose Verification Method</h2>
+
+                <p class="verification-subtitle">
+                    Select how you want your phone to be verified.
+                </p>
+
+                <div class="verification-options">
+
+                    <div class="verification-option"
+                         onclick="selectVerification(this, 'Store Visit')">
+
+                        <div class="verification-icon">
+                            🏬
+                        </div>
+
+                        <div>
+                            <h3>Store Visit & Instant Swap</h3>
+
+                            <p>
+                                Visit our store and complete verification
+                                instantly.
+                            </p>
+                        </div>
+
+                        <span class="option-radio">○</span>
+
+                    </div>
+
+
+                    <div class="verification-option"
+                         onclick="selectVerification(this, 'Doorstep Verification')">
+
+                        <div class="verification-icon">
+                            🚚
+                        </div>
+
+                        <div>
+                            <h3>Doorstep Verification</h3>
+
+                            <p>
+                                Our verification agent will visit your
+                                doorstep.
+                            </p>
+                        </div>
+
+                        <span class="option-radio">○</span>
+
+                    </div>
+
+                </div>
+
+                <button
+                    id="bookAppointmentBtn"
+                    class="continue-checkout-btn"
+                    onclick="bookAppointment('${phone.name}')"
+                    disabled
+                >
+                    Book Appointment →
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    purchasePage.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+let selectedVerification = "";
+
+function selectVerification(element, method) {
+
+    document.querySelectorAll(".verification-option")
+        .forEach(option => {
+            option.classList.remove("selected");
+
+            const radio = option.querySelector(".option-radio");
+
+            if (radio) {
+                radio.textContent = "○";
+            }
+        });
+
+    element.classList.add("selected");
+
+    const radio = element.querySelector(".option-radio");
+
+    if (radio) {
+        radio.textContent = "●";
+    }
+
+    selectedVerification = method;
+
+    const button = document.getElementById("bookAppointmentBtn");
+
+    if (button) {
+        button.disabled = false;
+    }
+}
+function bookAppointment(phoneName) {
+
+    const phone = buyPhones.find(p => p.name === phoneName);
+
+    if (!phone) return;
+
+    const purchasePage = document.getElementById("purchasePage");
+
+    if (!purchasePage) return;
+
+    purchasePage.innerHTML = `
+        <div class="purchase-container">
+
+            <button class="back-buy-btn"
+                onclick="showVerificationOptions('${phone.name}')">
+                ← Back to Verification
+            </button>
+
+            <!-- Progress Line -->
+            <div class="checkout-progress">
+
+                <div class="progress-step completed">
+                    <span>✓</span>
+                    <p>Phone Details</p>
+                </div>
+
+                <div class="progress-line completed-line"></div>
+
+                <div class="progress-step completed">
+                    <span>✓</span>
+                    <p>Checkout</p>
+                </div>
+
+                <div class="progress-line completed-line"></div>
+
+                <div class="progress-step active">
+                    <span>3</span>
+                    <p>Appointment</p>
+                </div>
+
+            </div>
+
+            <div class="appointment-page">
+
+                <div class="appointment-left">
+
+                    <h2>Book Your Appointment</h2>
+
+                    <p class="appointment-subtitle">
+                        Select your preferred date and time.
+                    </p>
+
+                    <label>Select Date</label>
+
+                    <input
+                        type="date"
+                        id="appointmentDate"
+                    >
+
+                    <label>Select Time</label>
+
+                    <select id="appointmentTime">
+
+                        <option value="">
+                            Select a time
+                        </option>
+
+                        <option value="10:00 AM">
+                            10:00 AM
+                        </option>
+
+                        <option value="11:00 AM">
+                            11:00 AM
+                        </option>
+
+                        <option value="12:00 PM">
+                            12:00 PM
+                        </option>
+
+                        <option value="2:00 PM">
+                            2:00 PM
+                        </option>
+
+                        <option value="3:00 PM">
+                            3:00 PM
+                        </option>
+
+                        <option value="4:00 PM">
+                            4:00 PM
+                        </option>
+
+                        <option value="5:00 PM">
+                            5:00 PM
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="appointment-right">
+
+                    <h2>Verification Method</h2>
+
+                    <div class="selected-method">
+
+                        <div class="method-icon">
+                            ${selectedVerification === "Doorstep Verification" ? "🚚" : "🏬"}
+                        </div>
+
+                        <div>
+
+                            <h3>${selectedVerification}</h3>
+
+                            <p>
+                                ${selectedVerification === "Doorstep Verification"
+                                    ? "An agent will visit your doorstep."
+                                    : "Visit our store for instant verification."
+                                }
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <h2>Choose Location</h2>
+
+                    <select id="appointmentLocation">
+
+                        ${
+                            selectedVerification === "Doorstep Verification"
+                            ? `
+                                <option value="">
+                                    Select your location
+                                </option>
+                                <option value="Home Address">
+                                    Home Address
+                                </option>
+                                <option value="Other Address">
+                                    Other Address
+                                </option>
+                              `
+                            : `
+                                <option value="">
+                                    Select store
+                                </option>
+                                <option value="CoherentMobiles Main Store">
+                                    CoherentMobiles Main Store
+                                </option>
+                                <option value="CoherentMobiles City Store">
+                                    CoherentMobiles City Store
+                                </option>
+                              `
+                        }
+
+                    </select>
+
+
+                    <button
+                        class="confirm-appointment-btn"
+                        onclick="confirmAppointment('${phone.name}')"
+                    >
+                        Confirm Appointment →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+    purchasePage.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function confirmAppointment(phoneName) {
+
+    const phone = buyPhones.find(p => p.name === phoneName);
+
+    if (!phone) return;
+
+    const date = document.getElementById("appointmentDate").value;
+    const time = document.getElementById("appointmentTime").value;
+    const location = document.getElementById("appointmentLocation").value;
+
+    if (!date || !time || !location) {
+        alert("Please select date, time and location.");
+        return;
+    }
+
+    const referenceNumber =
+        "CM" + Math.floor(100000 + Math.random() * 900000);
+
+    const purchasePage = document.getElementById("purchasePage");
+
+    purchasePage.innerHTML = `
+        <div class="purchase-container">
+
+            <div class="appointment-confirmed">
+
+    <div class="celebration">
+    <span class="confetti c1"></span>
+    <span class="confetti c2"></span>
+    <span class="confetti c3"></span>
+    <span class="confetti c4"></span>
+    <span class="confetti c5"></span>
+    <span class="confetti c6"></span>
+    <span class="confetti c7"></span>
+    <span class="confetti c8"></span>
+    <span class="confetti c9"></span>
+    <span class="confetti c10"></span>
+</div>
+
+<div class="success-icon">
+    ✓
+</div>
+                <h2>Appointment Confirmed!</h2>
+
+                <p>
+                    Your appointment for <strong>${phone.name}</strong>
+                    has been successfully booked.
+                </p>
+
+                <div class="appointment-summary">
+
+                    <p><strong>Date:</strong> ${date}</p>
+                    <p><strong>Time:</strong> ${time}</p>
+                    <p><strong>Location:</strong> ${location}</p>
+                    <p><strong>Verification:</strong> ${selectedVerification}</p>
+                    <p><strong>Reference No:</strong> ${referenceNumber}</p>
+
+                </div>
+
+                <button
+                    class="continue-checkout-btn"
+                    onclick="closePurchasePage()"
+                >
+                    Replay journey
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    purchasePage.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function closePurchasePage() {
+    const purchasePage = document.getElementById("purchasePage");
+
+    if (purchasePage) {
+        purchasePage.remove();
+    }
+
+    if (typeof navigateTo === "function") navigateTo("cataloguePage");
+    const bs = document.getElementById("buySection");
+    if (bs) bs.scrollIntoView({ behavior: "smooth" });
+}
+
+function placeOrder(phoneName) {
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const address = document.getElementById("customerAddress").value.trim();
+
+    if (name === "" || phone === "" || address === "") {
+        alert("Please fill all delivery details.");
+        return;
+    }
+
+    alert(
+        "Order placed successfully for " +
+        phoneName +
+        "!\nThank you, " +
+        name
+    );
+}
+
+
+
+/* =========================================================
+   COMPATIBILITY & NAVIGATION BRIDGES
+   ========================================================= */
+function openLogin() {
+  handleAuthClick();
+}
+
+function closeLogin() {
+  const modal = document.getElementById("loginModal");
+  if (modal) modal.style.display = "none";
+}
+
+function goToSell() {
+  navigateTo('sellPage');
+}
+
+function showSellPage() {
+  navigateTo('sellPage');
+}
+
+function showHomePage() {
+  navigateTo('homePage');
+}
+
+function showComingSoon(feature) {
+  showToast(feature + ' feature is coming soon!');
+}
+
+function toggleMoreMenu() {
+  const m = document.getElementById("moreMenu");
+  if (m) m.classList.toggle("show");
+}
+
+function closeMoreMenu() {
+  const m = document.getElementById("moreMenu");
+  if (m) m.classList.remove("show");
+}
+
 </script>
 
 <script>
+
 /* Sign-in UX enhancement: auto-verify OTP and reveal Proceed button. */
 (function(){
   const originalVerifyNames = ['verifyDemoOTP','verifyOTP','autoVerifyOTP'];
@@ -5035,6 +8257,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   observer.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['style','class']});
 })();
+
 </script>
 
 </body>
