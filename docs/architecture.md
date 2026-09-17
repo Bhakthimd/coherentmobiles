@@ -6,6 +6,10 @@ Coherent Mobiles is a web-based mobile phone platform that allows users to sell 
 
 The current application is implemented as a frontend application using HTML, CSS, and JavaScript.
 
+![CoherentMobiles Application Architecture](architecture.png.png)
+
+![CoherentMobiles Application Architecture — Version 2](architecture.png1.png)
+
 ---
 
 ## 2. High-Level Architecture
